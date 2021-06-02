@@ -1,7 +1,7 @@
 <template>
     <div class="wb-container col-md-5">
         <label>WARBAND TYPE:</label>
-        <b-form-select v-model="selected" v-bind:options="options"></b-form-select>
+        <b-form-select v-model="selected" v-bind:options="options" @change="selectedBand"></b-form-select>
     </div>
 </template>
 
@@ -19,6 +19,11 @@ export default {
           { value: 'witch-hunters', text: 'Witch Hunters' },
         ]
       }
+  },
+  methods: {
+    selectedBand() {
+       this.$emit('selected-band', this.selected);
+    }
   }
 }
 </script>
