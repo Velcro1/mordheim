@@ -1,15 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <WbName/>
+  <WbType/>
+  <WbTreasury/>
+  <WbRating/>
+  <WbEquipment/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import WbName from './components/wb-name'
+import WbType from './components/wb-type'
+import WbTreasury from './components/wb-treasury'
+import WbRating from './components/wb-rating'
+import WbEquipment from './components/wb-equipment'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    WbName,
+    WbType,
+    WbTreasury,
+    WbRating,
+    WbEquipment,
   }
 }
 </script>
