@@ -14,27 +14,31 @@
     background-repeat: repeat;
     border: 2px solid black;
     padding: 25px;
+    font-size: 16px;
   }
   .h-title {
     text-align: center;
     font-family: 'Schoensperger';
     font-weight: 500;
     font-style: normal;
-    min-height: 48px;
+    min-height: 5rem;
+    font-size: 4rem;
   }
 
 .wb-container {
     border: 2px black solid;
     background-color: #fff;
     padding: 5px;
-    margin: 15px;
+    margin: 25px;
     input {
         border: none;
         margin-left: 15px;
+        min-height: 26px;
     }
     select {
         border: none;
         margin-left: 15px;
+        min-height: 26px;
     }
     
 }
