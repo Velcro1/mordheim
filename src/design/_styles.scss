@@ -1,11 +1,26 @@
+@font-face {
+    font-family: 'Schoensperger';
+    src: url('./assets/fonts/Schoensperger.eot');
+    src: url('./assets/fonts/Schoensperger.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/Schoensperger.woff2') format('woff2'),
+        url('./assets/fonts/Schoensperger.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
 #app {
     font-family: 'Times New Roman', Times, serif;
-    background-color: rgb(190, 180, 180);
+    background-image: url('./assets/images/parchmentPaper.jpg');
+    background-repeat: repeat;
     border: 2px solid black;
     padding: 25px;
   }
   .h-title {
-      text-align: center;
+    text-align: center;
+    font-family: 'Schoensperger';
+    font-weight: 500;
+    font-style: normal;
+    min-height: 48px;
   }
 
 .wb-container {

@@ -1,50 +1,62 @@
 <template>
   <div id="app" class="container">
-    <h1 class="h-title">{{title}}</h1>
+    <h1 class="h-title">{{userSelect}}</h1>
     <div class="row">
-      <WbName @update-title="writeTitle" :newTitle="title" />
-      <WbType @selected-band="selectedBand" />
+      <div class="wb-container col-md-6">
+        <label>WARBAND NAME:</label>
+        <input type="text" v-model="title">
+    </div>
+      <div class="wb-container col-md-5">
+        <label>WARBAND TYPE:</label>
+        <b-form-select v-model="userSelect" :options="warBands.warbands" value-field="name" text-field="name" @change="startCharacter"></b-form-select>
+    </div>
     </div>
     <div class="row">
-      <WbTreasury />
-      <WbRating />
-      <WbEquipment />
+         <div class="wb-container col-md-3">
+      <label>TREASURY:</label>
+      <p>Gold Crowns:{{ startGold }}</p>
+      <p>Wyrdstone Shards:</p>
+      <input/>
+    </div>
+         <div class="wb-container col-md-3">
+      <label>WARBAND RATING:</label>
+      <p>Total Experience: <input /></p>
+      <p>Memebers ( ) x 5: <input /></p>
+      <p>Rating: <input /></p>
+    </div>
+      <div class="wb-container col-md-5">
+      <label>STORED EQUIPMENT:</label>
+      <textarea />
+    </div>
     </div>
   </div>
 </template>
 
 <script>
-import WbName from './components/wb-name.vue';
-import WbType from './components/wb-type';
-import WbTreasury from './components/wb-treasury';
-import WbRating from './components/wb-rating';
-import WbEquipment from './components/wb-equipment';
 import warBands from './data/warbands.json';
+
 
 export default {
   name: 'App',
   data() {
     return {
-      newTitle: '',
       title: '',
+      userSelect: '',
       warBands,
-      selected: '',
-      selectedWarBand: '',
+      startGold: 0,
     }
   },
   components: {
-    WbName,
-    WbType,
-    WbTreasury,
-    WbRating,
-    WbEquipment,
+
   },
   methods: {
-    writeTitle(newTitle){
-      this.title = newTitle;
-    },
-    selectedBand(selected){
-      this.selectedWarBand = selected;
+    startCharacter() {
+      let data = this.warBands.warbands;
+      data.filter(item => {
+        if ( item.name === this.userSelect) {
+          this.startGold = item.startGold;
+        }
+      })
     }
   }
 }

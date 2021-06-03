@@ -1,302 +1,203 @@
 {
-   "undead":{
-        "id": 1,
-        "name": "undead",
-        "startGold": 500,
-        "max-warriors": 15,
-        "heroes": [
-            {
-                "name": "vampire",
-                "startExp": 20,
-                "required": true,
-                "limit": 1,
-                "cost": 110,
-                "stats": {
-                    "m": 6,
-                    "ws": 4,
-                    "bs": 4,
-                    "s": 4,
-                    "t": 4,
-                    "w": 2,
-                    "i": 5,
-                    "a": 2,
-                    "ld": 8
-                },
-                "weap-arm": "undead-equipment",
-                "special-rules": {
-                    "leader": "leader",
-                    "cause-fear": "cause-fear",
-                    "immune-to-psychology": "immune-to-psychology",
-                    "immune-to-poison": "immune-to-poison",
-                    "no-pain": "no-pain"
-                }
-            },
-            {
-                "name": "necomancer",
-                "startExp": 8,
-                "required": false,
-                "limit": 1,
-                "cost": 35,
-                "stats": {
-                    "m": 4,
-                    "ws": 3,
-                    "bs": 3,
-                    "s": 3,
-                    "t": 3,
-                    "w": 1,
-                    "i": 3,
-                    "a": 1,
-                    "ld": 7
-                },
-                "weap-arm": "undead-equipment",
-                "special-rules": {
-                    "wizard": "wizard"
-                }
-            },
-            {
-                "name": "dregs",
-                "startExp": 0,
-                "required": false,
-                "limit": 3,
-                "cost": 20,
-                "stats": {
-                    "m": 4,
-                    "ws": 2,
-                    "bs": 2,
-                    "s": 3,
-                    "t": 3,
-                    "w": 1,
-                    "i": 3,
-                    "a": 1,
-                    "ld": 7
-                },
-                "weap-arm": "undead-equipment"
-            }
-        ],
-        "henchmen": {
-            "zombies": {
-                "startExp": 0,
-                "required": false,
-                "limit": "none",
-                "cost": 15,
-                "stats": {
-                    "m": 4,
-                    "ws": 2,
-                    "bs": 0,
-                    "s": 3,
-                    "t": 3,
-                    "w": 1,
-                    "i": 1,
-                    "a": 1,
-                    "ld": 5
-                },
-                "weap-arm": "none",
-                "special-rules": {
-                    "cause-fear": "cause-fear",
-                    "may-not-run": "may-not-run",
-                    "immune-to-psychology": "immune-to-psychology",
-                    "immune-to-poison": "immune-to-poison",
-                    "no-pain": "no-pain",
-                    "no-brains": "no-brains"
-                }
-            },
-            "ghouls": {
-                "startExp": 0,
-                "required": false,
-                "limit": "none",
-                "cost": 40,
-                "stats": {
-                    "m": 4,
-                    "ws": 2,
-                    "bs": 2,
-                    "s": 3,
-                    "t": 4,
-                    "w": 1,
-                    "i": 3,
-                    "a": 2,
-                    "ld": 5
-                },
-                "weap-arm": "none",
-                "special-rules": {
-                    "cause-fear": "cause-fear"
-                }
-            },
-            "dire-wolves": {
-                "startExp": 0,
-                "required": false,
-                "limit": 5,
-                "cost": 50,
-                "stats": {
-                    "m": 9,
-                    "ws": 3,
-                    "bs": 0,
-                    "s": 4,
-                    "t": 3,
-                    "w": 1,
-                    "i": 2,
-                    "a": 1,
-                    "ld": 4
-                },
-                "weap-arm": "none",
-                "special-rules": {
-                    "charge": "charge",
-                    "cause-fear": "cause-fear",
-                    "may-not-run": "may-not-run",
-                    "immune-to-psychology": "immune-to-psychology",
-                    "immune-to-poison": "immune-to-poison",
-                    "no-pain": "no-pain",
-                    "unliving": "unliving"
-                }
-             } 
-        }
-    },
-    "skaven":{
-        "id": 2,
-        "name": "skaven",
-        "startGold": 500,
-        "max-warriors": 15,
-        "heroes": {
-            "vampire": {
-                "startExp": 20,
-                "required": true,
-                "limit": 1,
-                "cost": 110,
-                "stats": {
-                    "m": 6,
-                    "ws": 4,
-                    "bs": 4,
-                    "s": 4,
-                    "t": 4,
-                    "w": 2,
-                    "i": 5,
-                    "a": 2,
-                    "ld": 8
-                },
-                "weap-arm": "undead-equipment",
-                "special-rules": {
-                    "leader": "leader",
-                    "cause-fear": "cause-fear",
-                    "immune-to-psychology": "immune-to-psychology",
-                    "immune-to-poison": "immune-to-poison",
-                    "no-pain": "no-pain"
-                }
-            },
-            "necromancer": {
-                "startExp": 8,
-                "required": false,
-                "limit": 1,
-                "cost": 35,
-                "stats": {
-                    "m": 4,
-                    "ws": 3,
-                    "bs": 3,
-                    "s": 3,
-                    "t": 3,
-                    "w": 1,
-                    "i": 3,
-                    "a": 1,
-                    "ld": 7
-                },
-                "weap-arm": "undead-equipment",
-                "special-rules": {
-                    "wizard": "wizard"
-                }
-            },
-            "dregs": {
-                "startExp": 0,
-                "required": false,
-                "limit": 3,
-                "cost": 20,
-                "stats": {
-                    "m": 4,
-                    "ws": 2,
-                    "bs": 2,
-                    "s": 3,
-                    "t": 3,
-                    "w": 1,
-                    "i": 3,
-                    "a": 1,
-                    "ld": 7
-                },
-                "weap-arm": "undead-equipment"
-            }
+    "warbands": [
+        {
+            "id": 1,
+            "name": "The Cult of the Possessed",
+            "startGold": 500,
+            "max-warriors": 15
         },
-        "henchmen": {
-            "zombies": {
-                "startExp": 0,
-                "required": false,
-                "limit": "none",
-                "cost": 15,
-                "stats": {
-                    "m": 4,
-                    "ws": 2,
-                    "bs": 0,
-                    "s": 3,
-                    "t": 3,
-                    "w": 1,
-                    "i": 1,
-                    "a": 1,
-                    "ld": 5
+        {
+            "id": 2,
+            "name": "Marienburgers",
+            "startGold": 600,
+            "max-warriors": 15
+        },
+        {
+            "id": 3,
+            "name": "Middenheimers",
+            "startGold": 500,
+            "max-warriors": 15
+        },
+        {
+            "id": 4,
+            "name": "Reiklanders",
+            "startGold": 500,
+            "max-warriors": 15
+        },
+        {
+            "id": 5,
+            "name": "Sisters of Sigmar",
+            "startGold": 500,
+            "max-warriors": 15
+        },
+        {
+            "id": 6,
+            "name": "Skaven",
+            "startGold": 500,
+            "max-warriors": 15
+        },
+        {
+            "id": 7,
+            "name": "The Undead",
+            "startGold": 500,
+            "max-warriors": 15,
+            "heroes": [
+                {
+                    "name": "vampire",
+                    "startExp": 20,
+                    "required": true,
+                    "limit": 1,
+                    "cost": 110,
+                    "stats": {
+                        "m": 6,
+                        "ws": 4,
+                        "bs": 4,
+                        "s": 4,
+                        "t": 4,
+                        "w": 2,
+                        "i": 5,
+                        "a": 2,
+                        "ld": 8
+                    },
+                    "weap-arm": "undead-equipment",
+                    "special-rules": {
+                        "leader": "leader",
+                        "cause-fear": "cause-fear",
+                        "immune-to-psychology": "immune-to-psychology",
+                        "immune-to-poison": "immune-to-poison",
+                        "no-pain": "no-pain"
+                    }
                 },
-                "weap-arm": "none",
-                "special-rules": {
-                    "cause-fear": "cause-fear",
-                    "may-not-run": "may-not-run",
-                    "immune-to-psychology": "immune-to-psychology",
-                    "immune-to-poison": "immune-to-poison",
-                    "no-pain": "no-pain",
-                    "no-brains": "no-brains"
-                }
-            },
-            "ghouls": {
-                "startExp": 0,
-                "required": false,
-                "limit": "none",
-                "cost": 40,
-                "stats": {
-                    "m": 4,
-                    "ws": 2,
-                    "bs": 2,
-                    "s": 3,
-                    "t": 4,
-                    "w": 1,
-                    "i": 3,
-                    "a": 2,
-                    "ld": 5
+                {
+                    "name": "necomancer",
+                    "startExp": 8,
+                    "required": false,
+                    "limit": 1,
+                    "cost": 35,
+                    "stats": {
+                        "m": 4,
+                        "ws": 3,
+                        "bs": 3,
+                        "s": 3,
+                        "t": 3,
+                        "w": 1,
+                        "i": 3,
+                        "a": 1,
+                        "ld": 7
+                    },
+                    "weap-arm": "undead-equipment",
+                    "special-rules": {
+                        "wizard": "wizard"
+                    }
                 },
-                "weap-arm": "none",
-                "special-rules": {
-                    "cause-fear": "cause-fear"
+                {
+                    "name": "dregs",
+                    "startExp": 0,
+                    "required": false,
+                    "limit": 3,
+                    "cost": 20,
+                    "stats": {
+                        "m": 4,
+                        "ws": 2,
+                        "bs": 2,
+                        "s": 3,
+                        "t": 3,
+                        "w": 1,
+                        "i": 3,
+                        "a": 1,
+                        "ld": 7
+                    },
+                    "weap-arm": "undead-equipment"
                 }
-            },
-            "dire-wolves": {
-                "startExp": 0,
-                "required": false,
-                "limit": 5,
-                "cost": 50,
-                "stats": {
-                    "m": 9,
-                    "ws": 3,
-                    "bs": 0,
-                    "s": 4,
-                    "t": 3,
-                    "w": 1,
-                    "i": 2,
-                    "a": 1,
-                    "ld": 4
+            ],
+            "henchmen": [
+                {
+                    "name": "zombies",
+                    "startExp": 0,
+                    "required": false,
+                    "limit": "none",
+                    "cost": 15,
+                    "stats": {
+                        "m": 4,
+                        "ws": 2,
+                        "bs": 0,
+                        "s": 3,
+                        "t": 3,
+                        "w": 1,
+                        "i": 1,
+                        "a": 1,
+                        "ld": 5
+                    },
+                    "weap-arm": "none",
+                    "special-rules": {
+                        "cause-fear": "cause-fear",
+                        "may-not-run": "may-not-run",
+                        "immune-to-psychology": "immune-to-psychology",
+                        "immune-to-poison": "immune-to-poison",
+                        "no-pain": "no-pain",
+                        "no-brains": "no-brains"
+                    }
                 },
-                "weap-arm": "none",
-                "special-rules": {
-                    "charge": "charge",
-                    "cause-fear": "cause-fear",
-                    "may-not-run": "may-not-run",
-                    "immune-to-psychology": "immune-to-psychology",
-                    "immune-to-poison": "immune-to-poison",
-                    "no-pain": "no-pain",
-                    "unliving": "unliving"
-                }
-             } 
+                {
+                    "name": "ghouls",
+                    "startExp": 0,
+                    "required": false,
+                    "limit": "none",
+                    "cost": 40,
+                    "stats": {
+                        "m": 4,
+                        "ws": 2,
+                        "bs": 2,
+                        "s": 3,
+                        "t": 4,
+                        "w": 1,
+                        "i": 3,
+                        "a": 2,
+                        "ld": 5
+                    },
+                    "weap-arm": "none",
+                    "special-rules": {
+                        "cause-fear": "cause-fear"
+                    }
+                },
+                {
+                    "name": "dire-wolves",
+                    "startExp": 0,
+                    "required": false,
+                    "limit": 5,
+                    "cost": 50,
+                    "stats": {
+                        "m": 9,
+                        "ws": 3,
+                        "bs": 0,
+                        "s": 4,
+                        "t": 3,
+                        "w": 1,
+                        "i": 2,
+                        "a": 1,
+                        "ld": 4
+                    },
+                    "weap-arm": "none",
+                    "special-rules": {
+                        "charge": "charge",
+                        "cause-fear": "cause-fear",
+                        "may-not-run": "may-not-run",
+                        "immune-to-psychology": "immune-to-psychology",
+                        "immune-to-poison": "immune-to-poison",
+                        "no-pain": "no-pain",
+                        "unliving": "unliving"
+                    }
+                } 
+                ]
+        },
+        {
+            "id": 8,
+            "name": "Witch Hunters",
+            "startGold": 500,
+            "max-warriors": 15
         }
-    }
 
+
+
+    ]
 }
