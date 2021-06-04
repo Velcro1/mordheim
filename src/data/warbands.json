@@ -41,9 +41,10 @@
             "name": "The Undead",
             "startGold": 500,
             "max-warriors": 15,
-            "heroes": [
+            "leader":
                 {
-                    "name": "vampire",
+                    "type": "Vampire",
+                    "leader": true,
                     "startExp": 20,
                     "required": true,
                     "limit": 1,
@@ -68,8 +69,9 @@
                         "no-pain": "no-pain"
                     }
                 },
+                "heroes": [
                 {
-                    "name": "necomancer",
+                    "type": "necomancer",
                     "startExp": 8,
                     "required": false,
                     "limit": 1,
@@ -91,7 +93,7 @@
                     }
                 },
                 {
-                    "name": "dregs",
+                    "type": "dregs",
                     "startExp": 0,
                     "required": false,
                     "limit": 3,
@@ -112,7 +114,7 @@
             ],
             "henchmen": [
                 {
-                    "name": "zombies",
+                    "type": "zombies",
                     "startExp": 0,
                     "required": false,
                     "limit": "none",
@@ -139,7 +141,7 @@
                     }
                 },
                 {
-                    "name": "ghouls",
+                    "type": "ghouls",
                     "startExp": 0,
                     "required": false,
                     "limit": "none",
@@ -161,7 +163,7 @@
                     }
                 },
                 {
-                    "name": "dire-wolves",
+                    "type": "dire-wolves",
                     "startExp": 0,
                     "required": false,
                     "limit": 5,
