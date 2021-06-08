@@ -43,7 +43,9 @@
                </b-row>
             </b-col>
             <b-col class="hero-equip p-2" cols="4">EQUIPMENT</b-col>
-            <b-col class="hero-skills p-2" cols="4">SKILLS, INJURIES, ETC</b-col>
+            <b-col class="hero-skills p-2" cols="4">SKILLS, INJURIES, ETC
+                <ul class="skills"><li v-for="specialRule in hero.specialRules" :key="specialRule">{{specialRule}}</li></ul>
+            </b-col>
         </b-row>
 
 
@@ -164,6 +166,7 @@ export default {
     data() {
         return {
             expPoint: 'x',
+            count: 0,
 
         }
     },
@@ -236,6 +239,11 @@ h5 {
     display: inline-block;
     vertical-align: top;
     margin-right: 15px;
+}
+.skills {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 </style>

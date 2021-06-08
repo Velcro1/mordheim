@@ -28,7 +28,20 @@
     </b-col>
     </b-row>
     <b-row v-if="wbType">
+      <b-col>
       <h2 class="h-title">{{heroesTitle}}</h2>
+         <button
+          type="button"
+          class="btn"
+          @click="showModal"
+          >
+          Open Modal!
+        </button>
+        <MemberModal
+          v-show="isModalVisible"
+          @close="closeModal"
+        />
+      </b-col>
     </b-row>
     <HeroCard v-if="leader" :hero="hero"/>
   </b-container>
@@ -37,6 +50,7 @@
 <script>
 import warBands from './data/warbands.json';
 import HeroCard from './components/hero-card.vue';
+import MemberModal from './components/memberModal'
 
 
 export default {
@@ -56,33 +70,30 @@ export default {
       totalExp: 0,
       hero: '',
       leader: false,
+      isModalVisible: false,
     }
   },
   components: {
     HeroCard,
-  },
-  computed: {
+    MemberModal,
   },
   methods: {
+    showModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    },
     startCharacter() {
-      let data = this.warBands.warbands;
-      data.filter(item => {
-        if ( item.name === this.wbType) {
-          this.startGold = item.startGold - item.leader.cost;
+      let wbs = this.warBands.warbands;
+      wbs.filter(wb => {
+        if ( wb.name === this.wbType) {
+          this.startGold = wb.startGold - wb.heroes[0].cost;
           this.leader = true;
           this.totalMembers++;
           this.membersRating = this.totalMembers * 5;
-          this.hero = item.leader;
-          this.totalExp = item.leader.startExp;
-        }
-      })
-      console.log(this.warBands.warbands[6].heroes);
-    },
-    addHero() {
-      let data = this.warBands.warbands;
-      data.filter(item => {
-        if ( item.name === this.wbType) {
-         console.log("jhfd");
+          this.hero = wb.heroes[0];
+          this.totalExp = wb.heroes[0].startExp;
         }
       })
     },
