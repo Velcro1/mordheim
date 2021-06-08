@@ -32,10 +32,10 @@
       <h2 class="h-title">{{heroesTitle}}</h2>
          <button
           type="button"
-          class="btn"
+          class="addHeroBtn"
           @click="showModal"
           >
-          Open Modal!
+          Add Hero
         </button>
         <MemberModal
           v-show="isModalVisible"
@@ -77,13 +77,15 @@ export default {
     HeroCard,
     MemberModal,
   },
+  computed: {
+  },
   methods: {
-    showModal() {
-      this.isModalVisible = true;
-    },
-    closeModal() {
-      this.isModalVisible = false;
-    },
+      showModal() {
+        this.isModalVisible = true;
+      },
+      closeModal() {
+        this.isModalVisible = false;
+      },
     startCharacter() {
       let wbs = this.warBands.warbands;
       wbs.filter(wb => {
