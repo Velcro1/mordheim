@@ -2,29 +2,30 @@
 <transition name="modal-fade">
   <div class="modal-backdrop">
     <div class="modal">
-      <header class="modal-header">
+      <!-- <header class="modal-header">
         <slot name="header">
           This is the default title!
         </slot>
-        <button
+      </header> -->
+      <button
           type="button"
           class="btn-close"
           @click="close"
         >
           x
         </button>
-      </header>
 
       <section class="modal-body">
-        <slot name="body">
-          This is the default body!
-        </slot>
+
+          <!-- <b-form-select v-model="wbType" :options="warBands.warbands" value-field="name" text-field="name" @change="startCharacter"></b-form-select>  -->
+          <ul>
+            <li v-for="wb in warBands.warbands" :key="wb.id">
+              <button @click="chosenWb(wb.name)">{{wb.name}}</button>
+            </li>
+          </ul>
        </section>
 
-      <footer class="modal-footer">
-        <slot name="footer">
-          This is the default footer!
-        </slot>
+   
         <button
           type="button"
           class="btn-green"
@@ -32,7 +33,7 @@
         >
           Close Modal
         </button>
-      </footer>
+
     </div>
   </div>
   </transition>
@@ -40,16 +41,20 @@
 
 <script>
 export default {
-    name: 'memberModal',
-    data() {
-        return {
-
-        }
+    name: 'wbModal',
+    props: {
+      warBands: {
+        type: Object
+      }
     },
     methods: {
-       close() {
+      close() {
         this.$emit('close');
       }, 
+      chosenWb(wbName) {
+        this.$emit('chosenWb', wbName);
+        this.$emit('close');
+      }
     },
 
 }
@@ -115,6 +120,8 @@ export default {
     font-weight: bold;
     color: #4AAE9B;
     background: transparent;
+    z-index: 99;
+    line-height: 5px;
   }
 
   .btn-green {

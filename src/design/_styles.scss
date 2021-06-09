@@ -23,7 +23,6 @@
     font-style: normal;
     min-height: 5rem;
     font-size: 4rem;
-    padding: 25px 0 0 0;
   }
 
 .wb-container {
@@ -39,5 +38,9 @@
         border: none;
         margin-left: 15px;
         min-height: 26px;
+    }
+    .newBtn  {
+        border: none;
+        background-color: transparent;
     }
 }

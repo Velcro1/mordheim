@@ -8,7 +8,20 @@
     </b-col>
       <b-col class="wb-container wb-type mb-3" cols="12" md="4">
         <label>WARBAND TYPE:</label>
-        <b-form-select v-model="wbType" :options="warBands.warbands" value-field="name" text-field="name" @change="startCharacter"></b-form-select>
+        <button
+          type="button"
+          class="addHeroBtn"
+          @click="showWbModal"
+          >
+          --&gt;Pick Warband&lt;--
+        </button>
+          <WbModal
+          v-show="isModalVisible"
+          @close="closeWbModal"
+          :warBands="warBands"
+          v-on:chosenWb="startCharacter($event)"
+        />
+        <!-- <b-form-select v-model="wbType" :options="warBands.warbands" value-field="name" text-field="name" @change="startCharacter"></b-form-select> -->
     </b-col>
     </b-row>
     <b-row align-h="between">
@@ -30,17 +43,6 @@
     <b-row v-if="wbType">
       <b-col>
       <h2 class="h-title">{{heroesTitle}}</h2>
-         <button
-          type="button"
-          class="addHeroBtn"
-          @click="showModal"
-          >
-          Add Hero
-        </button>
-        <MemberModal
-          v-show="isModalVisible"
-          @close="closeModal"
-        />
       </b-col>
     </b-row>
     <HeroCard v-if="leader" :hero="hero"/>
@@ -50,7 +52,7 @@
 <script>
 import warBands from './data/warbands.json';
 import HeroCard from './components/hero-card.vue';
-import MemberModal from './components/memberModal'
+import WbModal from './components/wbModal'
 
 
 export default {
@@ -75,21 +77,21 @@ export default {
   },
   components: {
     HeroCard,
-    MemberModal,
+    WbModal,
   },
   computed: {
   },
   methods: {
-      showModal() {
-        this.isModalVisible = true;
-      },
-      closeModal() {
-        this.isModalVisible = false;
-      },
-    startCharacter() {
+    showWbModal() {
+      this.isModalVisible = true;
+    },
+    closeWbModal() {
+      this.isModalVisible = false;
+    },
+    startCharacter(event) {
       let wbs = this.warBands.warbands;
       wbs.filter(wb => {
-        if ( wb.name === this.wbType) {
+        if ( wb.name === event) {
           this.startGold = wb.startGold - wb.heroes[0].cost;
           this.leader = true;
           this.totalMembers++;
@@ -105,7 +107,15 @@ export default {
 
 <style lang="scss">
 @import '@/design/index.scss';
-
+.addHeroBtn {
+  border-radius: 5px;
+  border: 1px solid green;
+  background-color: #1e7331;
+  color: #dcff8c;
+  box-shadow: #ADFF2F 2px 2px 12px;
+  position: relative;
+  z-index: 5;
+}
 @media (min-width: 768px){
   .wb-name.col-md-7 {
     width: 60%;
