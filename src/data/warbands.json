@@ -95,7 +95,7 @@
                     "ld": 7
                 },
                 "weap-arm": "undead-equipment",
-                "special-rules": {
+                "specialRules": {
                     "wizard": "wizard"
                 }
             },

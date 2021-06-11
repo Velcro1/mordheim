@@ -12,8 +12,8 @@
 
       <section class="modal-body">
           <ul>
-            <li v-for="wb in allWarBands.warbands" :key="wb.id">
-              <button @click="chosenWb(wb.name)">{{wb.name}}</button>
+            <li v-for="hero in heroesObj" :key="hero.id">
+              <button @click="chosenHero(hero.type)">{{hero.type}}</button>
             </li>
           </ul>
        </section>
@@ -33,9 +33,9 @@
 
 <script>
 export default {
-    name: 'wbModal',
+    name: 'heroModal',
     props: {
-      allWarBands: {
+      heroesObj: {
         type: Object
       }
     },
@@ -43,8 +43,8 @@ export default {
       close() {
         this.$emit('close');
       }, 
-      chosenWb(wbName) {
-        this.$emit('chosenWb', wbName);
+      chosenHero(heroType) {
+        this.$emit('chosenHero', heroType);
         this.$emit('close');
       }
     },
