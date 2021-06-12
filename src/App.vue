@@ -60,7 +60,7 @@
       </b-col>
     </b-row>
     <!-- <HeroCard v-if="ready" :hero="hero"/> -->
-    <HeroCard v-for="hero in heroCardArr" :key="hero.type" :hero="hero"/>
+    <HeroCard v-for="hero in heroCardArr" :key="hero.id" :hero="hero"/>
   </b-container>
 </template>
 
@@ -93,6 +93,7 @@ export default {
       isModalVisible: false,
       ready: false,
       heroCardArr: [],
+      limit: 0,
     }
   },
   components: {
@@ -127,9 +128,11 @@ export default {
           this.ready = true; 
           this.totalMembers++;
           this.wbRating = this.totalMembers * 5;
-          this.hero = chosenHero;
           this.totalExp += chosenHero.startExp;
           this.startGold = this.startGold - chosenHero.cost;
+          this.hero = chosenHero;
+          this.limit = chosenHero.limit;
+          this.currentLimit = this.limit - 1;
         }
       })
       this.heroCardArr.push(this.hero);

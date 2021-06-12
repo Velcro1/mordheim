@@ -12,7 +12,7 @@
 
       <section class="modal-body">
           <ul>
-            <li v-for="hero in heroesObj" :key="hero.id">
+            <li v-for="hero in updatedHeroes" :key="hero.id">
               <button @click="chosenHero(hero.type)">{{hero.type}}</button>
             </li>
           </ul>
@@ -34,20 +34,37 @@
 <script>
 export default {
     name: 'heroModal',
+    data() {
+        return {
+            newHeroes: [],
+            updatedHeroes: [],
+        }
+    },
     props: {
       heroesObj: {
         type: Object
       }
     },
     methods: {
-      close() {
-        this.$emit('close');
-      }, 
-      chosenHero(heroType) {
-        this.$emit('chosenHero', heroType);
-        this.$emit('close');
-      }
+        close() {
+            this.$emit('close');
+        }, 
+        chosenHero(heroType) {
+            this.$emit('chosenHero', heroType);
+            this.$emit('close');
+        },
+        removeHero() {
+            this.newHeroes = Object.values(this.heroesObj);
+            for (let i = 0; i < this.newHeroes.length; i++) {
+                if ( this.newHeroes[i].leader === false) {
+                    this.updatedHeroes.push(this.newHeroes[i])
+                }
+             }
+        },
     },
+    mounted() {
+        this.removeHero();
+    }
 
 }
 </script>

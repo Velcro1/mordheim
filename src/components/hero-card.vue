@@ -1,6 +1,6 @@
 <template>
 <b-row>
-    <b-col class="wb-container" cols="12">
+    <b-col class="wb-container" cols="12" >
         <b-row>
             <b-col cols="4">
                <b-row>
@@ -53,96 +53,7 @@
             <b-col class="hero-exp p-2 pt-3" cols="12">
                 <h5>Experience:</h5>
                 <div class="exp" id="mytab1">
-                <div id="expX-0" class="exp-block"></div>
-                <div id="expX-1" class="exp-block expX-1 double"></div>
-                <div id="expX-2" class="exp-block expX-2"></div>
-                <div id="expX-3" class="exp-block expX-3 double"></div>
-                <div id="expX-4" class="exp-block expX-4"></div>
-                <div id="expX-5" class="exp-block double"></div>
-                <div id="expX-6" class="exp-block"></div>
-                <div id="expX-7" class="exp-block double"></div>
-                <div id="expX-8" class="exp-block"></div>
-                <div id="expX-9" class="exp-block"></div>
-                <div id="expX-10" class="exp-block double"></div>
-                <div id="expX-11" class="exp-block"></div>
-                <div id="expX-12" class="exp-block"></div>
-                <div id="expX-13" class="exp-block double"></div>
-                <div id="expX-14" class="exp-block"></div>
-                <div id="expX-15" class="exp-block"></div>
-                <div id="expX-16" class="exp-block double"></div>
-                <div id="expX-17" class="exp-block"></div>
-                <div id="expX-18" class="exp-block"></div>
-                <div id="expX-19" class="exp-block double"></div>
-                <div id="expX-20" class="exp-block"></div>
-                <div id="expX-21" class="exp-block"></div>
-                <div id="expX-22" class="exp-block"></div>
-                <div id="expX-23" class="exp-block double"></div>
-                <div id="expX-24" class="exp-block"></div>
-                <div id="expX-25" class="exp-block"></div>
-                <div id="expX-26" class="exp-block"></div>
-                <div id="expX-27" class="exp-block double"></div>
-                <div id="expX-28" class="exp-block"></div>
-                <div id="expX-29" class="exp-block"></div>
-                <div id="expX-30" class="exp-block"></div>
-                <div id="expX-31" class="exp-block double"></div>
-                <div id="expX-32" class="exp-block"></div>
-                <div id="expX-33" class="exp-block"></div>
-                <div id="expX-34" class="exp-block"></div>
-                <div id="expX-35" class="exp-block double"></div>
-                <div id="expX-36" class="exp-block"></div>
-                <div id="expX-37" class="exp-block"></div>
-                <div id="expX-38" class="exp-block"></div>
-                <div id="expX-39" class="exp-block"></div>
-                <div id="expX-40" class="exp-block double"></div>
-                <div id="expX-41" class="exp-block"></div>
-                <div id="expX-42" class="exp-block"></div>
-                <div id="expX-43" class="exp-block"></div>
-                <div id="expX-44" class="exp-block"></div>
-                <div id="expX-45" class="exp-block double"></div>
-                <div id="expX-46" class="exp-block"></div>
-                <div id="expX-47" class="exp-block"></div>
-                <div id="expX-48" class="exp-block"></div>
-                <div id="expX-49" class="exp-block"></div>
-                <div id="expX-50" class="exp-block double"></div>
-                <div id="expX-51" class="exp-block"></div>
-                <div id="expX-52" class="exp-block"></div>
-                <div id="expX-53" class="exp-block"></div>
-                <div id="expX-54" class="exp-block"></div>
-                <div id="expX-55" class="exp-block"></div>
-                <div id="expX-56" class="exp-block double"></div>
-                <div id="expX-57" class="exp-block"></div>
-                <div id="expX-58" class="exp-block"></div>
-                <div id="expX-59" class="exp-block"></div>
-                <div id="expX-60" class="exp-block"></div>
-                <div id="expX-61" class="exp-block"></div>
-                <div id="expX-62" class="exp-block double"></div>
-                <div id="expX-63" class="exp-block"></div>
-                <div id="expX-64" class="exp-block"></div>
-                <div id="expX-65" class="exp-block"></div>
-                <div id="expX-66" class="exp-block"></div>
-                <div id="expX-67" class="exp-block"></div>
-                <div id="expX-68" class="exp-block double"></div>
-                <div id="expX-69" class="exp-block"></div>
-                <div id="expX-70" class="exp-block"></div>
-                <div id="expX-71" class="exp-block"></div>
-                <div id="expX-72" class="exp-block"></div>
-                <div id="expX-73" class="exp-block"></div>
-                <div id="expX-74" class="exp-block"></div>
-                <div id="expX-75" class="exp-block double"></div>
-                <div id="expX-76" class="exp-block"></div>
-                <div id="expX-77" class="exp-block"></div>
-                <div id="expX-78" class="exp-block"></div>
-                <div id="expX-79" class="exp-block"></div>
-                <div id="expX-80" class="exp-block"></div>
-                <div id="expX-81" class="exp-block"></div>
-                <div id="expX-82" class="exp-block double"></div>
-                <div id="expX-83" class="exp-block"></div>
-                <div id="expX-84" class="exp-block"></div>
-                <div id="expX-85" class="exp-block"></div>
-                <div id="expX-86" class="exp-block"></div>
-                <div id="expX-87" class="exp-block"></div>
-                <div id="expX-88" class="exp-block"></div>
-                <div id="expX-89" class="exp-block double"></div>
+                    <div v-for="expBlock in expBlockArr" :id="'expX-'+expBlock" class="exp-block" :key="expBlock">{{expPoint[expBlock] ? "x" : ''}}</div>
                 </div>
             </b-col>
         </b-row>
@@ -156,14 +67,28 @@ export default {
     props: ['hero'],
     data() {
         return {
-            expPoint: 'x',
+            expPoint: [],
             count: 0,
+            expBlocks: 90,
+            expBlockArr: [],
+            expSkill: [1,3,5,7,10,13,16,19,23,27,31,36,40,45,50,56,62,68,75,82,89],
         }
     },
+    methods: {
+        createExpBlockArr() {
+            for (let i = 0; i < this.expBlocks; i++){
+                this.expBlockArr.push(i);
+            }
+        },
+        updateExp() {
+             for (let i = 0; i < this.hero.startExp; i++){
+                 this.expPoint.push(true);
+             } 
+        },
+    },
     mounted() {
-        for(let i = 0; i < this.hero.startExp; i++){
-           document.getElementById('expX-'+i).innerHTML = "x";
-        }
+        this.createExpBlockArr();
+        this.updateExp();
     },
 }
 </script>
@@ -218,7 +143,27 @@ table.stats {
             text-align: center;
             padding: 3px;
         }
-        .double {
+        .exp-block:nth-child(2),
+        .exp-block:nth-child(4),
+        .exp-block:nth-child(6),
+        .exp-block:nth-child(8),
+        .exp-block:nth-child(11),
+        .exp-block:nth-child(14),
+        .exp-block:nth-child(17),
+        .exp-block:nth-child(20),
+        .exp-block:nth-child(24),
+        .exp-block:nth-child(28),
+        .exp-block:nth-child(32),
+        .exp-block:nth-child(36),
+        .exp-block:nth-child(41),
+        .exp-block:nth-child(46),
+        .exp-block:nth-child(51),
+        .exp-block:nth-child(57),
+        .exp-block:nth-child(63),
+        .exp-block:nth-child(69),
+        .exp-block:nth-child(76),
+        .exp-block:nth-child(83),
+        .exp-block:nth-child(90) {
             border: 4px solid black;
             padding: 0;
         }

@@ -69,11 +69,11 @@
                 },
                 "weap-arm": "undead-equipment",
                 "specialRules": {
-                    "leader": "leader",
-                    "cause-fear": "cause-fear",
-                    "immune-to-psychology": "immune-to-psychology",
-                    "immune-to-poison": "immune-to-poison",
-                    "no-pain": "no-pain"
+                    "leader": "Leader",
+                    "cause-fear": "Cause-fear",
+                    "immune-to-psychology": "Immune-to-psychology",
+                    "immune-to-poison": "Immune-to-poison",
+                    "no-pain": "No-pain"
                 }
             },
             {
@@ -96,7 +96,7 @@
                 },
                 "weap-arm": "undead-equipment",
                 "specialRules": {
-                    "wizard": "wizard"
+                    "wizard": "Wizard"
                 }
             },
             {
