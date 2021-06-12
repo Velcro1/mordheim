@@ -47,6 +47,8 @@
       <b-col>
         <!-- This button activates the Hero Modal -->
         <button @click="showWbModal">Add Hero</button>
+           <!-- This button activates the Henchmen Modal -->
+        <button>Add Henchmen</button>
          <!-- This modal takes a heroes object and listens for the chosen hero and calls the addCharacter method -->
         <HeroModal
           v-show="isModalVisible"
@@ -55,8 +57,6 @@
           v-on:chosenHero="addCharacter($event)"
         />
         <h2 class="h-title">{{heroesTitle}}</h2>
-        <!-- This button activates the Henchmen Modal -->
-        <button>Add Henchmen</button>
       </b-col>
     </b-row>
     <!-- <HeroCard v-if="ready" :hero="hero"/> -->
