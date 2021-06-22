@@ -5,14 +5,14 @@
       <button
           type="button"
           class="btn-close"
-          @click="close"
+          @click="toggleModal"
         >
           x
         </button>
 
       <section class="modal-body">
           <ul>
-            <li v-for="wb in allWarBands.warbands" :key="wb.id">
+            <li v-for="wb in getAllWarbands" :key="wb.id">
               <button @click="chosenWb(wb.name)">{{wb.name}}</button>
             </li>
           </ul>
@@ -21,7 +21,7 @@
         <button
           type="button"
           class="btn-green"
-          @click="close"
+          @click="toggleModal"
         >
           Close Modal
         </button>
@@ -32,23 +32,19 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
+
 export default {
     name: 'wbModal',
-    props: {
-      allWarBands: {
-        type: Object
-      }
-    },
     methods: {
-      close() {
-        this.$emit('close');
-      }, 
-      chosenWb(wbName) {
-        this.$emit('chosenWb', wbName);
-        this.$emit('close');
-      }
+      ...mapActions(['populateWarbands', 'toggleModal', 'chosenWb']),
     },
-
+    created() {
+      this.populateWarbands();
+    },
+    computed: {
+    ...mapGetters(['getAllWarbands']),
+  },
 }
 </script>
 

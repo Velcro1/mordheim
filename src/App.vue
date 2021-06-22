@@ -1,6 +1,6 @@
 <template>
   <b-container id="app">
-    <h1 class="h-title">{{chosenWbType ? chosenWbType : placeHolder}}</h1>
+    <h1 class="h-title">{{getChosenWb ? getChosenWb : placeHolder}}</h1>
     <b-row align-h="between">
       <b-col class="wb-container wb-name mb-3" cols="12" md="7">
         <label>WARBAND NAME:</label>
@@ -12,25 +12,20 @@
         <button
           type="button"
           class="addHeroBtn"
-          @click="showWbModal"
-          v-if="!chosenWbType"
+          @click="toggleModal"
+          v-if="!getChosenWb"
           >
           Pick Warband
         </button>
-        <span>{{chosenWbType}}</span>
-        <!-- This modal takes the warbands object and listens for the chosen warband and calls the startCharacter method -->
-          <WbModal
-          v-show="isModalVisible"
-          @close="closeWbModal"
-          :allWarBands="allWarBands"
-          v-on:chosenWb="startWarBand($event)"
-        />
+        <span>{{getChosenWb}}</span>
+        <!-- This modal takes the warbands object and listens for the chosen warband and calls the startCharacter method-->
+        <WbModal v-show="getModalState" />
     </b-col>
     </b-row>
     <b-row align-h="between">
       <b-col class="wb-container wb-treasury mb-3" cols="12" md="3">
         <label>TREASURY:</label>
-        <p>Gold Crowns: {{ startGold }}</p>
+        <p>Gold Crowns: {{ getStartGold }}</p>
         <p>Wyrdstone Shards:</p>
       </b-col>
       <b-col class="wb-container wb-rating mb-3" cols="12" md="3">
@@ -43,15 +38,15 @@
       <label>STORED EQUIPMENT:</label>
     </b-col>
     </b-row>
-    <b-row v-if="chosenWbType">
+    <b-row v-if="getChosenWb">
       <b-col>
         <!-- This button activates the Hero Modal -->
-        <button @click="showWbModal">Add Hero</button>
+        <button @click="showHeroModal">Add Hero</button>
            <!-- This button activates the Henchmen Modal -->
         <button>Add Henchmen</button>
          <!-- This modal takes a heroes object and listens for the chosen hero and calls the addCharacter method -->
         <HeroModal
-          v-show="isModalVisible"
+          v-show="this.isModalVisible"
           @close="closeWbModal"
           :heroesObj="heroesObj"
           v-on:chosenHero="addCharacter($event)"
@@ -65,32 +60,25 @@
 </template>
 
 <script>
-
-import allWarBands from './data/warbands.json';
 import HeroCard from './components/hero-card.vue';
 import WbModal from './components/wbModal';
 import HeroModal from './components/heroModal';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'App',
   data() {
     return {
-      allWarBands,
-      wbName: '',
-      chosenWbType: '',
       heroType: '',
-      chosenWb: {},
       placeHolder: 'Warband Name',
       heroesTitle: 'Heroes',
       henchmanTitle: 'Henchmen',
-      startGold: 0,
       totalMembers: 0,
       wbRating: 0,
       totalExp: 0,
       heroesObj: {},
       heroesArr: [],
       hero: {},
-      isModalVisible: false,
       ready: false,
       heroCardArr: [],
       limit: 0,
@@ -101,43 +89,40 @@ export default {
     WbModal,
     HeroModal,
   },
+  computed: {
+    ...mapGetters(['getAllWarbands', 'getModalState', 'getChosenWb', 'getStartGold']),
+  },
   methods: {
-    showWbModal() {
-      this.isModalVisible = true;
-    },
-    closeWbModal() {
-      this.isModalVisible = false;
-    },
-    startWarBand(wbtype) {
-      let allWbs = this.allWarBands.warbands;
-      allWbs.filter( chosenWb => {
-        if ( chosenWb.name === wbtype ) {
-          this.chosenWbType = wbtype; 
-          this.chosenWb = chosenWb;
-          this.startGold = chosenWb.startGold;
-          this.heroesObj = Object.assign({}, chosenWb.heroes);
-          this.heroesArr = chosenWb.heroes;
-          this.addCharacter(chosenWb.heroes[0].type);
-        }
-      })
-    },
-    addCharacter(heroType) {
-      let allHeroes = this.heroesArr;
-      allHeroes.filter( chosenHero => {
-        if ( chosenHero.type === heroType ) { 
-          this.ready = true; 
-          this.totalMembers++;
-          this.wbRating = this.totalMembers * 5;
-          this.totalExp += chosenHero.startExp;
-          this.startGold = this.startGold - chosenHero.cost;
-          this.hero = chosenHero;
-          this.limit = chosenHero.limit;
-          this.currentLimit = this.limit - 1;
-        }
-      })
-      this.heroCardArr.push(this.hero);
+    ...mapActions(['toggleModal']),
 
-    },
+    // startWarBand(wbtype) {
+    //   let allWbs = this.allWarBands.warbands;
+    //   allWbs.filter( chosenWb => {
+    //     if ( chosenWb.name === wbtype ) {
+    //       this.chosenWbType = wbtype; 
+    //       this.chosenWb = chosenWb;
+    //       this.heroesObj = Object.assign({}, chosenWb.heroes);
+    //       this.heroesArr = chosenWb.heroes;
+    //       this.addCharacter(chosenWb.heroes[0].type);
+    //     }
+    //   })
+    // },
+    // addCharacter(heroType) {
+    //   let allHeroes = this.heroesArr;
+    //   allHeroes.filter( chosenHero => {
+    //     if ( chosenHero.type === heroType ) { 
+    //       this.ready = true; 
+    //       this.totalMembers++;
+    //       this.wbRating = this.totalMembers * 5;
+    //       this.totalExp += chosenHero.startExp;
+    //       this.startGold = this.startGold - chosenHero.cost;
+    //       this.hero = chosenHero;
+    //       this.limit = chosenHero.limit;
+    //       this.currentLimit = this.limit - 1;
+    //     }
+    //   })
+    //   this.heroCardArr.push(this.hero);
+    // },
   }
 }
 </script>
