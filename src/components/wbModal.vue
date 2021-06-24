@@ -5,7 +5,7 @@
       <button
           type="button"
           class="btn-close"
-          @click="toggleModal"
+          @click="toggleWbModal"
         >
           x
         </button>
@@ -21,7 +21,7 @@
         <button
           type="button"
           class="btn-green"
-          @click="toggleModal"
+          @click="toggleWbModal"
         >
           Close Modal
         </button>
@@ -37,7 +37,7 @@ import { mapGetters, mapActions } from 'vuex';
 export default {
     name: 'wbModal',
     methods: {
-      ...mapActions(['populateWarbands', 'toggleModal', 'chosenWb']),
+      ...mapActions(['populateWarbands', 'toggleWbModal', 'chosenWb']),
     },
     created() {
       this.populateWarbands();

@@ -4,7 +4,7 @@
     <b-row align-h="between">
       <b-col class="wb-container wb-name mb-3" cols="12" md="7">
         <label>WARBAND NAME:</label>
-        <input type="text" v-model="wbName">
+        <input type="text" v-model="getWbName">
     </b-col>
       <b-col class="wb-container wb-type mb-3" cols="12" md="4">
         <label>WARBAND TYPE:</label>
@@ -12,7 +12,7 @@
         <button
           type="button"
           class="addHeroBtn"
-          @click="toggleModal"
+          @click="toggleWbModal"
           v-if="!getChosenWb"
           >
           Pick Warband
@@ -30,9 +30,9 @@
       </b-col>
       <b-col class="wb-container wb-rating mb-3" cols="12" md="3">
         <label>WARBAND RATING:</label>
-        <p>Total Experience: {{ totalExp }}</p>
-        <p>Members ( {{ totalMembers }} ) x 5: {{ wbRating }}</p>
-        <p>Rating: {{ totalExp + wbRating }}</p>
+        <p>Total Experience: {{ getTotalExp }}</p>
+        <p>Members ( {{ getTotalMembers }} ) x 5: {{ getWbRating }}</p>
+        <p>Rating: {{ getTotalExp + getWbRating }}</p>
     </b-col>
       <b-col class="wb-container wb-equip mb-3" cols="12" md="6">
       <label>STORED EQUIPMENT:</label>
@@ -41,21 +41,14 @@
     <b-row v-if="getChosenWb">
       <b-col>
         <!-- This button activates the Hero Modal -->
-        <button @click="showHeroModal">Add Hero</button>
-           <!-- This button activates the Henchmen Modal -->
+        <button @click="toggleHeroModal">Add Hero</button>
+        <!-- This button activates the Henchmen Modal -->
         <button>Add Henchmen</button>
-         <!-- This modal takes a heroes object and listens for the chosen hero and calls the addCharacter method -->
-        <HeroModal
-          v-show="this.isModalVisible"
-          @close="closeWbModal"
-          :heroesObj="heroesObj"
-          v-on:chosenHero="addCharacter($event)"
-        />
+        <HeroModal v-show="getHeroModalState" />
         <h2 class="h-title">{{heroesTitle}}</h2>
       </b-col>
     </b-row>
-    <!-- <HeroCard v-if="ready" :hero="hero"/> -->
-    <HeroCard v-for="hero in heroCardArr" :key="hero.id" :hero="hero"/>
+    <HeroCard v-for="hero in getCharArr" :key="hero.id" :hero="hero"/>
   </b-container>
 </template>
 
@@ -69,19 +62,9 @@ export default {
   name: 'App',
   data() {
     return {
-      heroType: '',
       placeHolder: 'Warband Name',
       heroesTitle: 'Heroes',
       henchmanTitle: 'Henchmen',
-      totalMembers: 0,
-      wbRating: 0,
-      totalExp: 0,
-      heroesObj: {},
-      heroesArr: [],
-      hero: {},
-      ready: false,
-      heroCardArr: [],
-      limit: 0,
     }
   },
   components: {
@@ -90,10 +73,22 @@ export default {
     HeroModal,
   },
   computed: {
-    ...mapGetters(['getAllWarbands', 'getModalState', 'getChosenWb', 'getStartGold']),
+    ...mapGetters([
+      'getAllWarbands',
+      'getModalState',
+      'getChosenWb',
+      'getStartGold',
+      'getWbName',
+      'getCharArr',
+      'getHeroModalState',
+      'getTotalMembers',
+      'getWbRating',
+      'getTotalExp',
+    ]),
+
   },
   methods: {
-    ...mapActions(['toggleModal']),
+    ...mapActions(['toggleWbModal','toggleHeroModal']),
 
     // startWarBand(wbtype) {
     //   let allWbs = this.allWarBands.warbands;

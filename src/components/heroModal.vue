@@ -5,15 +5,15 @@
       <button
           type="button"
           class="btn-close"
-          @click="close"
+          @click="toggleHeroModal"
         >
           x
         </button>
 
       <section class="modal-body">
           <ul>
-            <li v-for="hero in updatedHeroes" :key="hero.id">
-              <button @click="chosenHero(hero.type)">{{hero.type}}</button>
+            <li v-for="hero in getHeroes" :key="hero.id">
+              <button @click="addCharacter(hero.type)">{{hero.type}}</button>
             </li>
           </ul>
        </section>
@@ -21,7 +21,7 @@
         <button
           type="button"
           class="btn-green"
-          @click="close"
+          @click="toggleHeroModal"
         >
           Close Modal
         </button>
@@ -32,39 +32,16 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
 export default {
     name: 'heroModal',
-    data() {
-        return {
-            newHeroes: [],
-            updatedHeroes: [],
-        }
-    },
-    props: {
-      heroesObj: {
-        type: Object
-      }
+    computed: {
+    ...mapGetters(['getHeroes']),
     },
     methods: {
-        close() {
-            this.$emit('close');
-        }, 
-        chosenHero(heroType) {
-            this.$emit('chosenHero', heroType);
-            this.$emit('close');
-        },
-        removeHero() {
-            this.newHeroes = Object.values(this.heroesObj);
-            for (let i = 0; i < this.newHeroes.length; i++) {
-                if ( this.newHeroes[i].leader === false) {
-                    this.updatedHeroes.push(this.newHeroes[i])
-                }
-             }
-        },
+      ...mapActions(['toggleHeroModal', 'addCharacter']),
     },
-    mounted() {
-        this.removeHero();
-    }
+
 
 }
 </script>
