@@ -85,6 +85,7 @@ export default {
                  this.expPoint.push(true);
              } 
         },
+        
     },
     mounted() {
         this.createExpBlockArr();

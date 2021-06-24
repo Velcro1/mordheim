@@ -46,6 +46,7 @@
         <button>Add Henchmen</button>
         <HeroModal v-show="getHeroModalState" />
         <h2 class="h-title">{{heroesTitle}}</h2>
+        <div>{{getCharArr}}</div>
       </b-col>
     </b-row>
     <HeroCard v-for="hero in getCharArr" :key="hero.id" :hero="hero"/>
@@ -89,35 +90,6 @@ export default {
   },
   methods: {
     ...mapActions(['toggleWbModal','toggleHeroModal']),
-
-    // startWarBand(wbtype) {
-    //   let allWbs = this.allWarBands.warbands;
-    //   allWbs.filter( chosenWb => {
-    //     if ( chosenWb.name === wbtype ) {
-    //       this.chosenWbType = wbtype; 
-    //       this.chosenWb = chosenWb;
-    //       this.heroesObj = Object.assign({}, chosenWb.heroes);
-    //       this.heroesArr = chosenWb.heroes;
-    //       this.addCharacter(chosenWb.heroes[0].type);
-    //     }
-    //   })
-    // },
-    // addCharacter(heroType) {
-    //   let allHeroes = this.heroesArr;
-    //   allHeroes.filter( chosenHero => {
-    //     if ( chosenHero.type === heroType ) { 
-    //       this.ready = true; 
-    //       this.totalMembers++;
-    //       this.wbRating = this.totalMembers * 5;
-    //       this.totalExp += chosenHero.startExp;
-    //       this.startGold = this.startGold - chosenHero.cost;
-    //       this.hero = chosenHero;
-    //       this.limit = chosenHero.limit;
-    //       this.currentLimit = this.limit - 1;
-    //     }
-    //   })
-    //   this.heroCardArr.push(this.hero);
-    // },
   }
 }
 </script>

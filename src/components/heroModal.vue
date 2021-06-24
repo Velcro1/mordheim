@@ -12,8 +12,8 @@
 
       <section class="modal-body">
           <ul>
-            <li v-for="hero in getHeroes" :key="hero.id">
-              <button @click="addCharacter(hero.type)">{{hero.type}}</button>
+            <li v-for="hero in availableHeroes" :key="hero.id">
+              <button @click="addCharacter(hero); toggleHeroModal(); getCharArr();">{{hero.type}}</button>
             </li>
           </ul>
        </section>
@@ -25,7 +25,6 @@
         >
           Close Modal
         </button>
-
     </div>
   </div>
   </transition>
@@ -35,14 +34,32 @@
 import { mapGetters, mapActions } from 'vuex';
 export default {
     name: 'heroModal',
+    data() {
+      return{
+        availableHeroes: [],
+        characterLimit: [],
+      }
+    },
     computed: {
-    ...mapGetters(['getHeroes']),
+      ...mapGetters(['getHeroes','getCharArr']),
     },
     methods: {
       ...mapActions(['toggleHeroModal', 'addCharacter']),
+      filterCharacter() {
+        this.getCharArr.forEach(character => {this.characterLimit[character.type] = (this.characterLimit[character.id] || 0) + 1});
+          console.log(this.characterLimit);
+        return this.getHeroes.filter((character) => {
+          if ( character.limit >= 1) {
+            this.availableHeroes.push(character)
+            console.log("hello");
+          }
+        });
+ 
+      },
     },
-
-
+    created() {
+      this.filterCharacter();
+    },
 }
 </script>
 
