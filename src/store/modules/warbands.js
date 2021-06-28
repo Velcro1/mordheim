@@ -12,7 +12,8 @@ const state = {
     choseWbData: {},
     startGold: 0,
     heroes: {},
-    charArr: [],
+    chosenHeroes: [],
+    availableHeroes: [],
 };
 
 const getters = {
@@ -21,16 +22,17 @@ const getters = {
     getModalState: state => state.isModalVisible,
     getChosenWb: state => state.chosenWb,
     getStartGold: state => state.startGold,
-    getCharArr: state => state.charArr,
+    getChosenHeroes: state => state.chosenHeroes,
     getHeroModalState: state => state.isHeroVisable,
     getHeroes: state => state.heroes,
     getTotalMembers: state => state.totalMembers,
     getWbRating: state => state.wbRating,
     getTotalExp: state => state.totalExp,
+    getAvailableHeroes: state => state.availableHeroes,
 };
 
 const actions = {
-    async populateWarbands({ commit }){
+    async populateWarbands({ commit }) {
         const response = await axios.get('warbands.json');
         commit('setAllWarbands', response.data.warbands);
     },
@@ -42,13 +44,31 @@ const actions = {
         const updateHeroModal = !state.isHeroVisable;
         commit('setHeroModal', updateHeroModal);
     },
-    addCharacter({ commit }, type){
+    filterHeroes({ commit }) {
+        for (let i = 0; i < state.heroes.length; i++) {
+            if (state.heroes[i].limit !== 0) {
+                commit('setAvailableHeroes', state.heroes[i]);
+            }
+        }
+    },
+    updateLimit({ commit }, hero) {
+        for (let i = 0; i < state.heroes.length; i++) {
+            if (hero.type === state.heroes[i].type ) {
+                commit('setUpdateLimit', state.heroes[i])
+            }
+        }
+    },
+    async addCharacter({ commit, dispatch }, hero) {
+        commit('resetHeroes');
         commit('setTotalMembers');
         commit('setWbRating');
-        commit('setTotalExp', type.startExp);
-        commit('setCharacter', type);
+        commit('setTotalExp', hero.startExp);
+        commit('setCharacter', hero);
+        commit('setGold', hero.cost);
+        await dispatch('updateLimit', hero);
+        await dispatch('filterHeroes');
     },
-    chosenWb({ commit, dispatch }, name){
+    chosenWb({ commit, dispatch }, name) { 
         dispatch('toggleWbModal');
         state.warbands.filter( chosenWb => {
             if ( chosenWb.name === name ) {
@@ -69,11 +89,15 @@ const mutations = {
     setChosenWbData: (state, data) => (state.choseWbData = data),
     setStartGold: (state, gold) => (state.startGold = gold),
     setHeroes: (state, heroes) => (state.heroes = heroes),
-    setCharacter: (state, character) => (state.charArr.push(character)),
+    setCharacter: (state, character) => (state.chosenHeroes.push(character)),
     setHeroModal: (state, updateHeroModal) => (state.isHeroVisable = updateHeroModal),
     setTotalMembers: (state) => (state.totalMembers += 1),
     setWbRating: (state) => (state.wbRating = state.totalMembers * 5),
     setTotalExp: (state, startExp) => (state.totalExp += startExp),
+    setGold: (state, amount) => (state.startGold -= amount),
+    setAvailableHeroes: (state, hero) => state.availableHeroes.push(hero),
+    setUpdateLimit: (state, hero) => (hero.limit = parseInt(hero.limit) - 1),
+    resetHeroes: (state) => (state.availableHeroes = []),
 };
 
 export default {
@@ -82,3 +106,7 @@ export default {
     actions,
     mutations
 }
+
+
+
+

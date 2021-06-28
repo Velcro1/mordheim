@@ -41,15 +41,14 @@
     <b-row v-if="getChosenWb">
       <b-col>
         <!-- This button activates the Hero Modal -->
-        <button @click="toggleHeroModal">Add Hero</button>
+        <button @click="toggleHeroModal();">Add Hero</button>
         <!-- This button activates the Henchmen Modal -->
         <button>Add Henchmen</button>
         <HeroModal v-show="getHeroModalState" />
         <h2 class="h-title">{{heroesTitle}}</h2>
-        <div>{{getCharArr}}</div>
       </b-col>
     </b-row>
-    <HeroCard v-for="hero in getCharArr" :key="hero.id" :hero="hero"/>
+    <HeroCard v-for="hero in getChosenHeroes" :key="hero.id" :hero="hero"/>
   </b-container>
 </template>
 
@@ -75,12 +74,12 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'getAllWarbands',
+      // 'getAllWarbands',
       'getModalState',
       'getChosenWb',
       'getStartGold',
       'getWbName',
-      'getCharArr',
+      'getChosenHeroes',
       'getHeroModalState',
       'getTotalMembers',
       'getWbRating',

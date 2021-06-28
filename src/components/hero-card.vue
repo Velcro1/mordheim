@@ -50,8 +50,8 @@
 
 
         <b-row>
-            <b-col class="hero-exp p-2 pt-3" cols="12">
-                <h5>Experience:</h5>
+            <b-col class="hero-exp p-2 pt-3 flex" cols="12">
+                <div><h5>Experience:</h5></div>
                 <div class="exp" id="mytab1">
                     <div v-for="expBlock in expBlockArr" :id="'expX-'+expBlock" class="exp-block" :key="expBlock">{{expPoint[expBlock] ? "x" : ''}}</div>
                 </div>
