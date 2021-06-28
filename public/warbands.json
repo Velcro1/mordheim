@@ -1,10 +1,150 @@
 {
     "warbands": [
         {
-            "name": "The Cult of the Possessed",
+            "name": "Cult of the Possessed",
             "id": 1,
             "startGold": 500,
-            "max-warriors": 15
+            "max-warriors": 15,
+            "heroes":   
+            [
+            {
+                "type": "Magister",
+                "leader": true,
+                "startExp": 20,
+                "required": true,
+                "limit": 1,
+                "cost": 70,
+                "stats": {
+                    "m": 4,
+                    "ws": 4,
+                    "bs": 4,
+                    "s": 3,
+                    "t": 3,
+                    "w": 1,
+                    "i": 3,
+                    "a": 1,
+                    "ld": 8
+                },
+                "weap-arm": "all",
+                "specialRules": {
+                    "leader": "Leader",
+                    "wizard": "Wizard"
+                }
+            },
+            {
+                "type": "The possessed",
+                "leader": false,
+                "startExp": 8,
+                "required": false,
+                "limit": 2,
+                "cost": 90,
+                "stats": {
+                    "m": 5,
+                    "ws": 4,
+                    "bs": 0,
+                    "s": 4,
+                    "t": 4,
+                    "w": 2,
+                    "i": 4,
+                    "a": 2,
+                    "ld": 7
+                },
+                "weap-arm": "none",
+                "specialRules": {
+                    "cause-fear": "Cause-fear",
+                    "mutations": "Mutations"
+                }
+            },
+            {
+                "type": "Mutants",
+                "leader": false,
+                "startExp": 0,
+                "required": false,
+                "limit": 2,
+                "cost": 25,
+                "stats": {
+                    "m": 4,
+                    "ws": 3,
+                    "bs": 3,
+                    "s": 3,
+                    "t": 3,
+                    "w": 1,
+                    "i": 3,
+                    "a": 1,
+                    "ld": 7
+                },
+                "weap-arm": "all"
+            }
+            ],
+            "henchmen": 
+            [
+            {
+                "type": "Darksouls",
+                "startExp": 0,
+                "required": false,
+                "limit": 5,
+                "cost": 35,
+                "stats": {
+                    "m": 4,
+                    "ws": 2,
+                    "bs": 2,
+                    "s": 4,
+                    "t": 3,
+                    "w": 1,
+                    "i": 3,
+                    "a": 1,
+                    "ld": 6
+                },
+                "weap-arm": "darksouls-equipment",
+                "special-rules": {
+                    "crazed": "Crazed"
+                }
+            },
+            {
+                "type": "Brethren",
+                "startExp": 0,
+                "required": false,
+                "limit": "none",
+                "cost": 25,
+                "stats": {
+                    "m": 4,
+                    "ws": 3,
+                    "bs": 3,
+                    "s": 3,
+                    "t": 3,
+                    "w": 1,
+                    "i": 3,
+                    "a": 1,
+                    "ld": 7
+                },
+                "weap-arm": "possessed-equipment",
+                "special-rules": {
+                    
+                }
+            },
+            {
+                "type": "Beastmen",
+                "startExp": 0,
+                "required": false,
+                "limit": 3,
+                "cost": 45,
+                "stats": {
+                    "m": 4,
+                    "ws": 4,
+                    "bs": 3,
+                    "s": 3,
+                    "t": 4,
+                    "w": 2,
+                    "i": 3,
+                    "a": 1,
+                    "ld": 7
+                },
+                "weap-arm": "darksouls-equipment",
+                "special-rules": {
+
+                }
+            } 
+            ]
           
         },
         {
@@ -67,7 +207,7 @@
                     "a": 2,
                     "ld": 8
                 },
-                "weap-arm": "undead-equipment",
+                "weap-arm": "all",
                 "specialRules": {
                     "leader": "Leader",
                     "cause-fear": "Cause-fear",
@@ -94,7 +234,7 @@
                     "a": 1,
                     "ld": 7
                 },
-                "weap-arm": "undead-equipment",
+                "weap-arm": "all",
                 "specialRules": {
                     "wizard": "Wizard"
                 }
@@ -117,7 +257,7 @@
                     "a": 1,
                     "ld": 7
                 },
-                "weap-arm": "undead-equipment"
+                "weap-arm": "all"
             }
             ],
             "henchmen": 
@@ -200,13 +340,154 @@
                 }
             } 
             ]
-          
         },
         {
             "name": "Witch Hunters",
             "id": 8,
             "startGold": 500,
-            "max-warriors": 15
+            "max-warriors": 12,
+            "heroes":   
+            [
+            {
+                "type": "Witch Hunter Captain",
+                "leader": true,
+                "startExp": 20,
+                "required": true,
+                "limit": 1,
+                "cost": 60,
+                "stats": {
+                    "m": 4,
+                    "ws": 4,
+                    "bs": 4,
+                    "s": 3,
+                    "t": 3,
+                    "w": 1,
+                    "i": 4,
+                    "a": 1,
+                    "ld": 8
+                },
+                "weap-arm": "all",
+                "specialRules": {
+                    "leader": "Leader",
+                    "burn-the-witch": "Burn The Witch"
+                }
+            },
+            {
+                "type": "Witch Hunters",
+                "leader": false,
+                "startExp": 8,
+                "required": false,
+                "limit": 3,
+                "cost": 25,
+                "stats": {
+                    "m": 4,
+                    "ws": 3,
+                    "bs": 3,
+                    "s": 3,
+                    "t": 3,
+                    "w": 1,
+                    "i": 3,
+                    "a": 1,
+                    "ld": 7
+                },
+                "weap-arm": "all",
+                "specialRules": {
+                    "burn-the-witch": "Burn The Witch"
+                }
+            },
+            {
+                "type": "Warrior Priest",
+                "leader": false,
+                "startExp": 12,
+                "required": false,
+                "limit": 1,
+                "cost": 40,
+                "stats": {
+                    "m": 4,
+                    "ws": 3,
+                    "bs": 3,
+                    "s": 3,
+                    "t": 3,
+                    "w": 1,
+                    "i": 3,
+                    "a": 1,
+                    "ld": 8
+                },
+                "weap-arm": "all",
+                "specialRules": {
+                    "prayer": "Prayer"
+                }
+            }
+            ],
+            "henchmen": 
+            [
+            {
+                "type": "Flagellants",
+                "startExp": 0,
+                "required": false,
+                "limit": 5,
+                "cost": 40,
+                "stats": {
+                    "m": 4,
+                    "ws": 3,
+                    "bs": 3,
+                    "s": 4,
+                    "t": 4,
+                    "w": 1,
+                    "i": 3,
+                    "a": 1,
+                    "ld": 10
+                },
+                "weap-arm": "flagellant-equipment",
+                "special-rules": {
+                    "fanatical": "Fanatical"
+                }
+            },
+            {
+                "type": "Zealots",
+                "startExp": 0,
+                "required": false,
+                "limit": "none",
+                "cost": 20,
+                "stats": {
+                    "m": 4,
+                    "ws": 2,
+                    "bs": 2,
+                    "s": 3,
+                    "t": 3,
+                    "w": 1,
+                    "i": 3,
+                    "a": 1,
+                    "ld": 7
+                },
+                "weap-arm": "zealot-equipment",
+                "special-rules": {
+        
+                }
+            },
+            {
+                "type": "Warhounds",
+                "startExp": 0,
+                "required": false,
+                "limit": 5,
+                "cost": 15,
+                "stats": {
+                    "m": 6,
+                    "ws": 4,
+                    "bs": 0,
+                    "s": 4,
+                    "t": 3,
+                    "w": 1,
+                    "i": 4,
+                    "a": 1,
+                    "ld": 5
+                },
+                "weap-arm": "none",
+                "special-rules": {
+                    "animal": "Animal"
+                }
+            } 
+            ]
         }
     ]
 }

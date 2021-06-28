@@ -42,7 +42,9 @@
                     </b-col>
                </b-row>
             </b-col>
-            <b-col class="hero-equip p-2" cols="4">EQUIPMENT</b-col>
+            <b-col class="hero-equip p-2" cols="4">EQUIPMENT
+                <!-- <button @click="showEquipment">Add Equipment</button> -->
+            </b-col>
             <b-col class="hero-skills p-2" cols="4">SKILLS, INJURIES, ETC
                 <ul class="skills"><li v-for="specialRule in hero.specialRules" :key="specialRule">{{specialRule}}</li></ul>
             </b-col>
