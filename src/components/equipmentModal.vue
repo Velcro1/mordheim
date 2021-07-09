@@ -33,14 +33,14 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 export default {
-    name: 'equipmentModal',
+    name: 'EquipmentModal',
     data() {
       return{
         
       }
     },
     computed: {
-      ...mapGetters(['getEquipment]),
+      ...mapGetters(['getEquipment'])
     },
     methods: {
       ...mapActions(['toggleEquipmentModal', 'addEquipment']),

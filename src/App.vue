@@ -73,6 +73,7 @@ export default {
       henchmanTitle: 'Henchmen',
     }
   },
+  
   components: {
     HeroCard,
     WbModal,

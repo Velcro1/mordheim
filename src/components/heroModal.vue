@@ -13,7 +13,7 @@
       <section class="modal-body">
           <ul>
             <li v-for="hero in getAvailableHeroes" :key="hero.id">
-              <button @click="addCharacter(hero); toggleHeroModal();">{{`${hero.type} - ${hero.limit}`}}</button>
+              <button @click="addCharacter(hero); toggleHeroModal();">{{`${hero.type} - Limit: ${hero.limit} - Cost: ${hero.cost} per`}}</button>
             </li>
           </ul>
        </section>
@@ -22,11 +22,11 @@
           type="button"
           class="btn-green"
           @click="toggleHeroModal"
-        >
+        >s
           Close Modal
         </button>
     </div>
-  </div>
+  </div>s
   </transition>
 </template>
 

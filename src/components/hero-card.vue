@@ -43,7 +43,8 @@
                </b-row>
             </b-col>
             <b-col class="hero-equip p-2" cols="4">EQUIPMENT
-                <!-- <button @click="showEquipment">Add Equipment</button> -->
+                <button @click="toggleEquipmentModal">Add Equipment</button>
+                <EquipmentModal v-show="getEquipmentModalState" />
             </b-col>
             <b-col class="hero-skills p-2" cols="4">SKILLS, INJURIES, ETC
                 <ul class="skills"><li v-for="specialRule in hero.specialRules" :key="specialRule">{{specialRule}}</li></ul>
@@ -62,8 +63,9 @@
     </b-col>
 </b-row>
 </template>
-
 <script>
+import EquipmentModal from './equipmentModal';
+import { mapGetters, mapActions } from 'vuex';
 export default {
     name: 'HeroCard',
     props: ['hero'],
@@ -76,7 +78,14 @@ export default {
             expSkill: [1,3,5,7,10,13,16,19,23,27,31,36,40,45,50,56,62,68,75,82,89],
         }
     },
+    components: {
+        EquipmentModal,
+    },
+    computed: {
+        ...mapGetters(['getEquipmentModalState']),
+    },
     methods: {
+         ...mapActions(['toggleEquipmentModal']),
         createExpBlockArr() {
             for (let i = 0; i < this.expBlocks; i++){
                 this.expBlockArr.push(i);

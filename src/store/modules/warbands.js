@@ -8,6 +8,7 @@ const state = {
     totalExp: 0,
     isModalVisible: false,
     isHeroVisable: false,
+    isEquipmentVisable: false,
     chosenWb: '',
     choseWbData: {},
     startGold: 0,
@@ -24,6 +25,7 @@ const getters = {
     getStartGold: state => state.startGold,
     getChosenHeroes: state => state.chosenHeroes,
     getHeroModalState: state => state.isHeroVisable,
+    getEquipmentModalState: state => state.isEquipmentVisable,
     getHeroes: state => state.heroes,
     getTotalMembers: state => state.totalMembers,
     getWbRating: state => state.wbRating,
@@ -43,6 +45,10 @@ const actions = {
     toggleHeroModal({ commit }) {
         const updateHeroModal = !state.isHeroVisable;
         commit('setHeroModal', updateHeroModal);
+    },
+    toggleEquipmentModal({ commit }) {
+        const updateEquipmentModal = !state.isEquipmentVisable;
+        commit('setEquipmentModal', updateEquipmentModal);
     },
     filterHeroes({ commit }) {
         for (let i = 0; i < state.heroes.length; i++) {
@@ -98,6 +104,7 @@ const mutations = {
     setAvailableHeroes: (state, hero) => state.availableHeroes.push(hero),
     setUpdateLimit: (state, hero) => (hero.limit = parseInt(hero.limit) - 1),
     resetHeroes: (state) => (state.availableHeroes = []),
+    setEquipmentModal: (state, updateEquipmentModal) => (state.isEquipmentVisable = updateEquipmentModal),
 };
 
 export default {

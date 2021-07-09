@@ -73,7 +73,10 @@
                     "a": 1,
                     "ld": 7
                 },
-                "weap-arm": "all"
+                "weap-arm": "all",
+                "specialRules": {
+                    "mutations": "Mutations"
+                }
             }
             ],
             "henchmen": 
