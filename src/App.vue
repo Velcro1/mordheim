@@ -8,7 +8,6 @@
     </b-col>
       <b-col class="wb-container wb-type mb-3" cols="12" md="4">
         <label>WARBAND TYPE:</label>
-        <!-- This button activates the Warband Modal -->
         <button
           type="button"
           class="addHeroBtn"
@@ -18,7 +17,6 @@
           Pick Warband
         </button>
         <span>{{getChosenWb}}</span>
-        <!-- This modal takes the warbands object and listens for the chosen warband and calls the startCharacter method-->
         <WbModal v-show="getModalState" />
     </b-col>
     </b-row>
@@ -59,44 +57,44 @@
 </template>
 
 <script>
-import HeroCard from './components/hero-card.vue';
-import WbModal from './components/wbModal';
-import HeroModal from './components/heroModal';
 import { mapGetters, mapActions } from 'vuex';
+import HeroCard from './components/hero-card.vue';
+import WbModal from './components/wbModal.vue';
+import HeroModal from './components/heroModal.vue';
 
 export default {
-  name: 'App',
-  data() {
-    return {
-      placeHolder: 'Warband Name',
-      heroesTitle: 'Heroes',
-      henchmanTitle: 'Henchmen',
-    }
-  },
-  
-  components: {
-    HeroCard,
-    WbModal,
-    HeroModal,
-  },
-  computed: {
-    ...mapGetters([
-      'getModalState',
-      'getChosenWb',
-      'getStartGold',
-      'getWbName',
-      'getChosenHeroes',
-      'getHeroModalState',
-      'getTotalMembers',
-      'getWbRating',
-      'getTotalExp',
-    ]),
+    name: 'App',
+    data() {
+        return {
+            placeHolder: 'Warband Name',
+            heroesTitle: 'Heroes',
+            henchmanTitle: 'Henchmen',
+        };
+    },
 
-  },
-  methods: {
-    ...mapActions(['toggleWbModal','toggleHeroModal']),
-  }
-}
+    components: {
+        HeroCard,
+        WbModal,
+        HeroModal,
+    },
+    computed: {
+        ...mapGetters([
+            'getModalState',
+            'getChosenWb',
+            'getStartGold',
+            'getWbName',
+            'getChosenHeroes',
+            'getHeroModalState',
+            'getTotalMembers',
+            'getWbRating',
+            'getTotalExp',
+        ]),
+
+    },
+    methods: {
+        ...mapActions(['toggleWbModal', 'toggleHeroModal']),
+    },
+};
 </script>
 
 <style lang="scss">

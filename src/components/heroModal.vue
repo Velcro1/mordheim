@@ -13,7 +13,9 @@
       <section class="modal-body">
           <ul>
             <li v-for="hero in getAvailableHeroes" :key="hero.id">
-              <button @click="addCharacter(hero); toggleHeroModal();">{{`${hero.type} - Limit: ${hero.limit} - Cost: ${hero.cost} per`}}</button>
+              <button @click="addCharacter(hero); toggleHeroModal();">
+                {{`${hero.type} - Limit: ${hero.limit} - Cost: ${hero.cost} per`}}
+                </button>
             </li>
           </ul>
        </section>
@@ -32,20 +34,21 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+
 export default {
     name: 'heroModal',
     data() {
-      return{
-        
-      }
+        return {
+
+        };
     },
     computed: {
-      ...mapGetters(['getHeroes','getAvailableHeroes']),
+        ...mapGetters(['getHeroes', 'getAvailableHeroes']),
     },
     methods: {
-      ...mapActions(['toggleHeroModal', 'addCharacter']),
+        ...mapActions(['toggleHeroModal', 'addCharacter']),
     },
-}
+};
 </script>
 
 <style scoped>

@@ -37,15 +37,15 @@ import { mapGetters, mapActions } from 'vuex';
 export default {
     name: 'wbModal',
     methods: {
-      ...mapActions(['populateWarbands', 'toggleWbModal', 'chosenWb']),
+        ...mapActions(['populateWarbands', 'toggleWbModal', 'chosenWb']),
     },
     created() {
-      this.populateWarbands();
+        this.populateWarbands();
     },
     computed: {
-    ...mapGetters(['getAllWarbands']),
-  },
-}
+        ...mapGetters(['getAllWarbands']),
+    },
+};
 </script>
 
 <style scoped>

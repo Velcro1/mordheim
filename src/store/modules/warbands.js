@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 const state = {
     warbands: [],
@@ -18,19 +18,19 @@ const state = {
 };
 
 const getters = {
-    getAllWarbands: state => state.warbands,
-    getWbName: state => state.wbName,
-    getModalState: state => state.isModalVisible,
-    getChosenWb: state => state.chosenWb,
-    getStartGold: state => state.startGold,
-    getChosenHeroes: state => state.chosenHeroes,
-    getHeroModalState: state => state.isHeroVisable,
-    getEquipmentModalState: state => state.isEquipmentVisable,
-    getHeroes: state => state.heroes,
-    getTotalMembers: state => state.totalMembers,
-    getWbRating: state => state.wbRating,
-    getTotalExp: state => state.totalExp,
-    getAvailableHeroes: state => state.availableHeroes,
+    getAllWarbands: (state) => state.warbands,
+    getWbName: (state) => state.wbName,
+    getModalState: (state) => state.isModalVisible,
+    getChosenWb: (state) => state.chosenWb,
+    getStartGold: (state) => state.startGold,
+    getChosenHeroes: (state) => state.chosenHeroes,
+    getHeroModalState: (state) => state.isHeroVisable,
+    getEquipmentModalState: (state) => state.isEquipmentVisable,
+    getHeroes: (state) => state.heroes,
+    getTotalMembers: (state) => state.totalMembers,
+    getWbRating: (state) => state.wbRating,
+    getTotalExp: (state) => state.totalExp,
+    getAvailableHeroes: (state) => state.availableHeroes,
 };
 
 const actions = {
@@ -51,16 +51,16 @@ const actions = {
         commit('setEquipmentModal', updateEquipmentModal);
     },
     filterHeroes({ commit }) {
-        for (let i = 0; i < state.heroes.length; i++) {
+        for (let i = 0; i < state.heroes.length; i += 1) {
             if (state.heroes[i].limit !== 0) {
                 commit('setAvailableHeroes', state.heroes[i]);
             }
         }
     },
     updateLimit({ commit }, hero) {
-        for (let i = 0; i < state.heroes.length; i++) {
-            if (hero.type === state.heroes[i].type ) {
-                commit('setUpdateLimit', state.heroes[i])
+        for (let i = 0; i < state.heroes.length; i += 1) {
+            if (hero.type === state.heroes[i].type) {
+                commit('setUpdateLimit', state.heroes[i]);
             }
         }
     },
@@ -74,17 +74,17 @@ const actions = {
         await dispatch('updateLimit', hero);
         await dispatch('filterHeroes');
     },
-    chosenWb({ commit, dispatch }, name) { 
+    chosenWb({ commit, dispatch }, name) {
         dispatch('toggleWbModal');
-        state.warbands.filter( chosenWb => {
-            if ( chosenWb.name === name ) {
+        state.warbands.filter((chosenWb) => {
+            if (chosenWb.name === name) {
                 commit('setChosenWb', chosenWb.name);
                 commit('setChosenWbData', chosenWb);
                 commit('setStartGold', chosenWb.startGold);
                 commit('setHeroes', chosenWb.heroes);
                 dispatch('addCharacter', chosenWb.heroes[0]);
             }
-        })
+        });
     },
 };
 
@@ -111,9 +111,5 @@ export default {
     state,
     getters,
     actions,
-    mutations
-}
-
-
-
-
+    mutations,
+};
