@@ -1,0 +1,185 @@
+{
+    "weapons": [
+        {
+            "name": "dagger",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "hammer",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "staff",
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "mace",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "club",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "axe",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "sword",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "flail",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "morning-star",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "halberd",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "spear",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "lance",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "double-handed-weapon",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "gromril-weapon",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "ithilmar-weapon",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "short-bow",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "long-bow",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "long-bow",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "elf-bow",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "crossbow",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "sling",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "throwing-weapon",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "repeater-crossbow",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "crossbow-pistol",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "pistol",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "slduelling-pistol",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "blunderbuss",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "handgun",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "hockland-long-rifle",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        }
+    ],
+    "armour": [
+        {
+            "name": "light-armour",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "heavy-armour",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "shield",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "buckler",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "helmet",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "ithilmar-armour",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "gromril-armour",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        }
+    ]
+}

@@ -76,6 +76,7 @@ const actions = {
     },
     chosenWb({ commit, dispatch }, name) {
         dispatch('toggleWbModal');
+        // eslint-disable-next-line array-callback-return
         state.warbands.filter((chosenWb) => {
             if (chosenWb.name === name) {
                 commit('setChosenWb', chosenWb.name);
@@ -89,21 +90,35 @@ const actions = {
 };
 
 const mutations = {
+    // eslint-disable-next-line no-param-reassign, no-return-assign
     setAllWarbands: (state, wbs) => (state.warbands = wbs),
+    // eslint-disable-next-line no-param-reassign, no-return-assign
     setModal: (state, updateModal) => (state.isModalVisible = updateModal),
+    // eslint-disable-next-line no-param-reassign, no-return-assign
     setChosenWb: (state, name) => (state.chosenWb = name),
+    // eslint-disable-next-line no-param-reassign, no-return-assign
     setChosenWbData: (state, data) => (state.choseWbData = data),
+    // eslint-disable-next-line no-param-reassign, no-return-assign
     setStartGold: (state, gold) => (state.startGold = gold),
+    // eslint-disable-next-line no-param-reassign, no-return-assign
     setHeroes: (state, heroes) => (state.heroes = heroes),
     setCharacter: (state, character) => (state.chosenHeroes.push(character)),
+    // eslint-disable-next-line no-param-reassign, no-return-assign
     setHeroModal: (state, updateHeroModal) => (state.isHeroVisable = updateHeroModal),
+    // eslint-disable-next-line no-param-reassign, no-return-assign
     setTotalMembers: (state) => (state.totalMembers += 1),
+    // eslint-disable-next-line no-param-reassign, no-return-assign
     setWbRating: (state) => (state.wbRating = state.totalMembers * 5),
+    // eslint-disable-next-line no-param-reassign, no-return-assign
     setTotalExp: (state, startExp) => (state.totalExp += startExp),
+    // eslint-disable-next-line no-param-reassign, no-return-assign
     setGold: (state, amount) => (state.startGold -= amount),
     setAvailableHeroes: (state, hero) => state.availableHeroes.push(hero),
-    setUpdateLimit: (state, hero) => (hero.limit = parseInt(hero.limit) - 1),
+    // eslint-disable-next-line no-param-reassign, no-return-assign, radix
+    setUpdateLimit: (_state, hero) => (hero.limit = parseInt(hero.limit) - 1),
+    // eslint-disable-next-line no-param-reassign, no-return-assign
     resetHeroes: (state) => (state.availableHeroes = []),
+    // eslint-disable-next-line no-param-reassign, no-return-assign
     setEquipmentModal: (state, updateEquipmentModal) => (state.isEquipmentVisable = updateEquipmentModal),
 };
 

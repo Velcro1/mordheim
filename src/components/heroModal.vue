@@ -24,11 +24,11 @@
           type="button"
           class="btn-green"
           @click="toggleHeroModal"
-        >s
+        >
           Close Modal
         </button>
     </div>
-  </div>s
+  </div>
   </transition>
 </template>
 
@@ -37,13 +37,8 @@ import { mapGetters, mapActions } from 'vuex';
 
 export default {
     name: 'heroModal',
-    data() {
-        return {
-
-        };
-    },
     computed: {
-        ...mapGetters(['getHeroes', 'getAvailableHeroes']),
+        ...mapGetters(['getAvailableHeroes']),
     },
     methods: {
         ...mapActions(['toggleHeroModal', 'addCharacter']),
