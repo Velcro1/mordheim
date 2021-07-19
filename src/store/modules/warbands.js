@@ -15,10 +15,16 @@ const state = {
     heroes: {},
     chosenHeroes: [],
     availableHeroes: [],
+    equipment: [],
+    weapons: [],
+    armour: [],
 };
 
 const getters = {
     getAllWarbands: (state) => state.warbands,
+    getWeapons: (state) => state.weapons,
+    getArmour: (state) => state.armour,
+    getEquipment: (state) => state.equipment,
     getWbName: (state) => state.wbName,
     getModalState: (state) => state.isModalVisible,
     getChosenWb: (state) => state.chosenWb,
@@ -37,6 +43,13 @@ const actions = {
     async populateWarbands({ commit }) {
         const response = await axios.get('warbands.json');
         commit('setAllWarbands', response.data.warbands);
+    },
+    async populateEquipment({ commit }) {
+        const response = await axios.get('equipment.json');
+        console.log('Equip', response);
+        commit('setWeapons', response.data.weapons);
+        commit('setArmour', response.data.armour);
+        commit('setEquipment', response.data.equipment);
     },
     toggleWbModal({ commit }) {
         const updateModal = !state.isModalVisible;
@@ -92,6 +105,12 @@ const actions = {
 const mutations = {
     // eslint-disable-next-line no-param-reassign, no-return-assign
     setAllWarbands: (state, wbs) => (state.warbands = wbs),
+    // eslint-disable-next-line no-param-reassign, no-return-assign
+    setWeapons: (state, wbs) => (state.weapons = wbs),
+    // eslint-disable-next-line no-param-reassign, no-return-assign
+    setArmour: (state, wbs) => (state.armour = wbs),
+    // eslint-disable-next-line no-param-reassign, no-return-assign
+    setEquipment: (state, wbs) => (state.equipment = wbs),
     // eslint-disable-next-line no-param-reassign, no-return-assign
     setModal: (state, updateModal) => (state.isModalVisible = updateModal),
     // eslint-disable-next-line no-param-reassign, no-return-assign

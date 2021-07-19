@@ -2,26 +2,56 @@
   <transition name="modal-fade">
     <div class="modal-backdrop">
       <div class="modal">
-        <button type="button" class="btn-close" @click="toggleHeroModal">
+        <button type="button" class="btn-close" @click="toggleEquipmentModal">
           x
         </button>
 
         <section class="modal-body">
+          <div>
           <ul>
-            <li v-for="hero in getAvailableHeroes" :key="hero.id">
+            <li v-for="weap in getWeapons" :key="weap.id">
               <button
                 @click="
                   addEquipment(hero);
                   toggleEquipmentModal();
                 "
               >
-                {{ `` }}
+                {{ weap.name }}
               </button>
             </li>
           </ul>
+          </div>
+          <div>
+          <ul>
+            <li v-for="arm in getArmour" :key="arm.id">
+              <button
+                @click="
+                  addEquipment(hero);
+                  toggleEquipmentModal();
+                "
+              >
+                {{ arm.name }}
+              </button>
+            </li>
+          </ul>
+          </div>
+          <div>
+          <ul>
+            <li v-for="equip in getEquipment" :key="equip.id">
+              <button
+                @click="
+                  addEquipment(hero);
+                  toggleEquipmentModal();
+                "
+              >
+                {{ equip.name }}
+              </button>
+            </li>
+          </ul>
+          </div>
         </section>
 
-        <button type="button" class="btn-green" @click="toggleHeroModal">
+        <button type="button" class="btn-green" @click="toggleEquipmentModal">
           Close Modal
         </button>
       </div>
@@ -34,11 +64,14 @@ import { mapGetters, mapActions } from 'vuex';
 
 export default {
     name: 'EquipmentModal',
-    computed: {
-        ...mapGetters(['getEquipment']),
-    },
     methods: {
-        ...mapActions(['toggleEquipmentModal', 'addEquipment']),
+        ...mapActions(['populateEquipment', 'toggleEquipmentModal', 'addEquipment']),
+    },
+    created() {
+        this.populateEquipment();
+    },
+    computed: {
+        ...mapGetters(['getWeapons', 'getArmour', 'getEquipment']),
     },
 };
 </script>
@@ -63,9 +96,9 @@ export default {
   overflow-x: auto;
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 75%;
   height: 50%;
-  margin: 10% 25%;
+  margin: 10% 12%;
 }
 
 .modal-header,
@@ -90,6 +123,7 @@ export default {
 .modal-body {
   position: relative;
   padding: 20px 10px;
+  display: flex;
 }
 
 .btn-close {

@@ -25,7 +25,7 @@
                     "a": 1,
                     "ld": 8
                 },
-                "weap-arm": "all",
+                "weap-arm": 1,
                 "specialRules": {
                     "leader": "Leader",
                     "wizard": "Wizard"
@@ -49,7 +49,7 @@
                     "a": 2,
                     "ld": 7
                 },
-                "weap-arm": "none",
+                "weap-arm": 0,
                 "specialRules": {
                     "cause-fear": "Cause-fear",
                     "mutations": "Mutations"
@@ -73,7 +73,7 @@
                     "a": 1,
                     "ld": 7
                 },
-                "weap-arm": "all",
+                "weap-arm": 1,
                 "specialRules": {
                     "mutations": "Mutations"
                 }
@@ -98,7 +98,7 @@
                     "a": 1,
                     "ld": 6
                 },
-                "weap-arm": "darksouls-equipment",
+                "weap-arm": 1.2,
                 "special-rules": {
                     "crazed": "Crazed"
                 }
@@ -120,7 +120,7 @@
                     "a": 1,
                     "ld": 7
                 },
-                "weap-arm": "possessed-equipment",
+                "weap-arm": 1,
                 "special-rules": {
                     
                 }
@@ -142,7 +142,7 @@
                     "a": 1,
                     "ld": 7
                 },
-                "weap-arm": "darksouls-equipment",
+                "weap-arm": 1.2,
                 "special-rules": {
 
                 }
@@ -210,7 +210,7 @@
                     "a": 2,
                     "ld": 8
                 },
-                "weap-arm": "all",
+                "weap-arm": 7,
                 "specialRules": {
                     "leader": "Leader",
                     "cause-fear": "Cause-fear",
@@ -237,7 +237,7 @@
                     "a": 1,
                     "ld": 7
                 },
-                "weap-arm": "all",
+                "weap-arm": 7,
                 "specialRules": {
                     "wizard": "Wizard"
                 }
@@ -260,7 +260,7 @@
                     "a": 1,
                     "ld": 7
                 },
-                "weap-arm": "all"
+                "weap-arm": 7
             }
             ],
             "henchmen": 
@@ -282,7 +282,7 @@
                     "a": 1,
                     "ld": 5
                 },
-                "weap-arm": "none",
+                "weap-arm": 0,
                 "special-rules": {
                     "cause-fear": "cause-fear",
                     "may-not-run": "may-not-run",
@@ -309,7 +309,7 @@
                     "a": 2,
                     "ld": 5
                 },
-                "weap-arm": "none",
+                "weap-arm": 0,
                 "special-rules": {
                     "cause-fear": "cause-fear"
                 }
@@ -331,7 +331,7 @@
                     "a": 1,
                     "ld": 4
                 },
-                "weap-arm": "none",
+                "weap-arm": 0,
                 "special-rules": {
                     "charge": "charge",
                     "cause-fear": "cause-fear",
@@ -369,7 +369,7 @@
                     "a": 1,
                     "ld": 8
                 },
-                "weap-arm": "all",
+                "weap-arm": 8,
                 "specialRules": {
                     "leader": "Leader",
                     "burn-the-witch": "Burn The Witch"
@@ -393,7 +393,7 @@
                     "a": 1,
                     "ld": 7
                 },
-                "weap-arm": "all",
+                "weap-arm": 8,
                 "specialRules": {
                     "burn-the-witch": "Burn The Witch"
                 }
@@ -416,7 +416,7 @@
                     "a": 1,
                     "ld": 8
                 },
-                "weap-arm": "all",
+                "weap-arm": 8,
                 "specialRules": {
                     "prayer": "Prayer"
                 }
@@ -441,7 +441,7 @@
                     "a": 1,
                     "ld": 10
                 },
-                "weap-arm": "flagellant-equipment",
+                "weap-arm": 8.3,
                 "special-rules": {
                     "fanatical": "Fanatical"
                 }
@@ -463,7 +463,7 @@
                     "a": 1,
                     "ld": 7
                 },
-                "weap-arm": "zealot-equipment",
+                "weap-arm": 8.2,
                 "special-rules": {
         
                 }
@@ -485,7 +485,7 @@
                     "a": 1,
                     "ld": 5
                 },
-                "weap-arm": "none",
+                "weap-arm": 0,
                 "special-rules": {
                     "animal": "Animal"
                 }
