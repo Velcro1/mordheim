@@ -1,0 +1,189 @@
+{
+    "weapons": [
+        {
+            "name": "dagger",
+            "cost": 0,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "club",
+            "cost": 3,
+            "canHave": ["skaven-henchmen"]
+        },
+        {
+            "name": "hammer",
+            "cost": 3,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead"]
+        },
+        {
+            "name": "mace",
+            "cost": 3,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead"]
+        },
+        {
+            "name": "axe",
+            "cost": 5,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","the-undead"]
+        },
+        {
+            "name": "sword",
+            "cost": 10,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "flail",
+            "cost": 15,
+            "canHave": ["darksouls","flagellant","sisters-of-sigmar","skaven-hero"]
+        },
+        {
+            "name": "sigmarite-warhammer",
+            "cost": 15,
+            "canHave": ["sisters-of-sigmar"]
+        },
+        {
+            "name": "steel-whip",
+            "cost": 10,
+            "canHave": ["sisters-of-sigmar"]
+        },
+        {
+            "name": "morning-star",
+            "cost": 15,
+            "canHave": ["reikland","middenheim","marienburg","flagellant"]
+        },
+        {
+            "name": "halberd",
+            "cost": 10,
+            "canHave": ["reikland","middenheim","marienburg","the-undead","skaven-hero"]
+        },
+        {
+            "name": "spear",
+            "cost": 10,
+            "canHave": ["reikland","middenheim","marienburg","cult-of-the-possessed","zealot","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "weeping-blades",
+            "cost": 50,
+            "canHave": ["skaven-hero"]
+        },
+        {
+            "name": "fighting-claws",
+            "cost": 35,
+            "canHave": ["skaven-hero"]
+        },
+        {
+            "name": "double-handed-weapon",
+            "cost": 15,
+            "canHave": ["reikland","middenheim","marienburg","cult-of-the-possessed","darksouls","witch-hunters","zealot","flagellant","sisters-of-sigmar","the-undead"]
+        },
+        {
+            "name": "bow",
+            "cost": 10,
+            "canHave": ["reikland","middenheim","marienburg","cult-of-the-possessed","zealot","the-undead"]
+        },
+        {
+            "name": "short-bow",
+            "cost": 5,
+            "canHave": ["cult-of-the-possessed","zealot","the-undead"]
+        },
+        {
+            "name": "long-bow",
+            "cost": 15,
+            "canHave": ["mercenary-marksman"]
+        },
+        {
+            "name": "crossbow",
+            "cost": 25,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","witch-hunters"]
+        },
+        {
+            "name": "sling",
+            "cost": 2,
+            "canHave": ["sisters-of-sigmar","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "blowpipe",
+            "cost": 25,
+            "canHave": ["skaven-hero"]
+        },
+        {
+            "name": "warplock-pistol",
+            "cost": 35,
+            "canHave": ["skaven-hero"]
+        },
+        {
+            "name": "throwing-weapon",
+            "cost": 15,
+            "canHave": ["skaven-hero"]
+        },
+        {
+            "name": "pistol",
+            "cost": 15,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","witch-hunters"]
+        },
+        {
+            "name": "duelling-pistol",
+            "cost": 30,
+            "canHave": ["reikland","middenheim","marienburg"]
+        },
+        {
+            "name": "blunderbuss",
+            "cost": 30,
+            "canHave": ["mercenary-marksman"]
+        },
+        {
+            "name": "handgun",
+            "cost": 35,
+            "canHave": ["mercenary-marksman"]
+        },
+        {
+            "name": "hockland-long-rifle",
+            "cost": 200,
+            "canHave": ["mercenary-marksman"]
+        }
+    ],
+    "armour": [
+        {
+            "name": "light-armour",
+            "cost": 20,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        },
+        {
+            "name": "heavy-armour",
+            "cost": 50,
+            "canHave": ["reikland","middenheim","marienburg","cult-of-the-possessed","darksouls","witch-hunters","sisters-of-sigmar","the-undead"]
+        },
+        {
+            "name": "shield",
+            "cost": 5,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-henchmen"]
+        },
+        {
+            "name": "buckler",
+            "cost": 5,
+            "canHave": ["reikland","middenheim","marienburg","witch-hunters","sisters-of-sigmar","skaven-hero"]
+        },
+        {
+            "name": "helmet",
+            "cost": 10,
+            "canHave": ["reikland","middenheim","marienburg","mercenary-marksman","cult-of-the-possessed","darksouls","witch-hunters","zealot","sisters-of-sigmar","the-undead","skaven-hero","skaven-henchmen"]
+        }
+    ],
+    "equipment": [
+            {
+                "name": "holy-tome",
+                "cost": 120,
+                "canHave": ["sisters-of-sigmar"]
+            },
+            {
+                "name": "blessed-water",
+                "cost": 10,
+                "canHave": ["sisters-of-sigmar"]
+            },
+            {
+                "name": "holy-relic",
+                "cost": 15,
+                "canHave": ["sisters-of-sigmar"]
+            }
+        ]
+    
+}
