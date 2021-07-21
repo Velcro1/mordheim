@@ -58,6 +58,7 @@
               {{ specialRule }}
             </li>
           </ul>
+          <button class="delete" @click="deleteCharacter">Delete</button>
         </b-col>
       </b-row>
 
@@ -121,7 +122,7 @@ export default {
         EquipmentModal,
     },
     computed: {
-        ...mapGetters(['getEquipmentModalState']),
+        ...mapGetters(['getEquipmentModalState', 'getChosenHeroes']),
     },
     methods: {
         ...mapActions(['toggleEquipmentModal']),
@@ -134,6 +135,10 @@ export default {
             for (let i = 0; i < this.hero.startExp; i += 1) {
                 this.expPoint.push(true);
             }
+        },
+        deleteCharacter() {
+            // const man = getChosenHeroes.find(this.hero.id);
+            console.log(this.hero.id);
         },
     },
     mounted() {
@@ -154,6 +159,7 @@ export default {
 .hero-equip,
 .hero-skills {
   border-bottom: 2px solid black;
+  position: relative;
 }
 .hero-equip,
 .hero-skills {
@@ -228,5 +234,12 @@ h5 {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+.delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 1px black solid;
+    padding: 5px;
 }
 </style>

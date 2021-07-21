@@ -46,7 +46,6 @@ const actions = {
     },
     async populateEquipment({ commit }) {
         const response = await axios.get('equipment.json');
-        console.log('Equip', response);
         commit('setWeapons', response.data.weapons);
         commit('setArmour', response.data.armour);
         commit('setEquipment', response.data.equipment);
