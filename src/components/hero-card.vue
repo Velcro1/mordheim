@@ -125,7 +125,7 @@ export default {
         ...mapGetters(['getEquipmentModalState', 'getChosenHeroes']),
     },
     methods: {
-        ...mapActions(['toggleEquipmentModal']),
+        ...mapActions(['toggleEquipmentModal', 'updateRoster']),
         createExpBlockArr() {
             for (let i = 0; i < this.expBlocks; i += 1) {
                 this.expBlockArr.push(i);
@@ -137,8 +137,12 @@ export default {
             }
         },
         deleteCharacter() {
-            // const man = getChosenHeroes.find(this.hero.id);
-            console.log(this.hero.id);
+            if (this.hero.leader === true) {
+                alert('You can not delete the leader');
+            } else {
+                this.getChosenHeroes.splice(this.getChosenHeroes.indexOf(this.hero), 1);
+                this.updateRoster(this.hero);
+            }
         },
     },
     mounted() {

@@ -99,6 +99,14 @@ const actions = {
             }
         });
     },
+    async updateRoster({ commit, dispatch }, hero) {
+        commit('updateGold', hero.cost);
+        commit('updateTotalExp', hero.startExp);
+        commit('updateTotalMembers');
+        commit('setWbRating');
+        await dispatch('updateLimit', hero);
+        await dispatch('filterHeroes');
+    },
 };
 
 const mutations = {
@@ -131,6 +139,7 @@ const mutations = {
     setTotalExp: (state, startExp) => (state.totalExp += startExp),
     // eslint-disable-next-line no-param-reassign, no-return-assign
     setGold: (state, amount) => (state.startGold -= amount),
+    // eslint-disable-next-line no-param-reassign, no-return-assign
     setAvailableHeroes: (state, hero) => state.availableHeroes.push(hero),
     // eslint-disable-next-line no-param-reassign, no-return-assign, radix
     setUpdateLimit: (_state, hero) => (hero.limit = parseInt(hero.limit) - 1),
@@ -138,6 +147,13 @@ const mutations = {
     resetHeroes: (state) => (state.availableHeroes = []),
     // eslint-disable-next-line no-param-reassign, no-return-assign
     setEquipmentModal: (state, updateEquipmentModal) => (state.isEquipmentVisable = updateEquipmentModal),
+    // eslint-disable-next-line no-param-reassign, no-return-assign
+    updateGold: (state, cost) => (state.startGold += cost),
+    // eslint-disable-next-line no-param-reassign, no-return-assign
+    updateTotalExp: (state, startExp) => (state.totalExp -= startExp),
+    // eslint-disable-next-line no-param-reassign, no-return-assign
+    updateTotalMembers: (state) => (state.totalMembers -= 1),
+
 };
 
 export default {
