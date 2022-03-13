@@ -72,7 +72,7 @@
               class="exp-block"
               :key="expBlock"
             >
-              {{ expPoint[expBlock] ? "x" : "" }}
+              {{ expPoint[expBlock] && "x" }}
             </div>
           </div>
         </b-col>
@@ -125,7 +125,7 @@ export default {
         ...mapGetters(['getEquipmentModalState', 'getChosenHeroes']),
     },
     methods: {
-        ...mapActions(['toggleEquipmentModal', 'updateRoster']),
+        ...mapActions(['toggleEquipmentModal', 'removeCharacter']),
         createExpBlockArr() {
             for (let i = 0; i < this.expBlocks; i += 1) {
                 this.expBlockArr.push(i);
@@ -141,7 +141,7 @@ export default {
                 alert('You can not delete the leader');
             } else {
                 this.getChosenHeroes.splice(this.getChosenHeroes.indexOf(this.hero), 1);
-                this.updateRoster(this.hero);
+                this.removeCharacter(this.hero);
             }
         },
     },

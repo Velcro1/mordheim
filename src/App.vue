@@ -4,7 +4,7 @@
     <b-row align-h="between">
       <b-col class="wb-container wb-name mb-3" cols="12" md="7">
         <label>WARBAND NAME:</label>
-        <input type="text" v-model="getWbName">
+        <input type="text" v-model="wbName" v-on:keyup.enter="addWbName(wbName)">
     </b-col>
       <b-col class="wb-container wb-type mb-3" cols="12" md="4">
         <label>WARBAND TYPE:</label>
@@ -29,8 +29,8 @@
       <b-col class="wb-container wb-rating mb-3" cols="12" md="3">
         <label>WARBAND RATING:</label>
         <p>Total Experience: {{ getTotalExp }}</p>
-        <p>Members ( {{ getTotalMembers }} ) x 5: {{ getWbRating }}</p>
-        <p>Rating: {{ getTotalExp + getWbRating }}</p>
+        <p>Members ( {{ getTotalMembers }} ) x 5: {{ getWbMembersRating }}</p>
+        <p>Rating: {{ getWbRating }}</p>
     </b-col>
       <b-col class="wb-container wb-equip mb-3" cols="12" md="6">
       <label>STORED EQUIPMENT:</label>
@@ -69,6 +69,7 @@ export default {
             placeHolder: 'Warband Name',
             heroesTitle: 'Heroes',
             henchmanTitle: 'Henchmen',
+            wbName: '',
         };
     },
 
@@ -82,17 +83,17 @@ export default {
             'getModalState',
             'getChosenWb',
             'getStartGold',
-            'getWbName',
             'getChosenHeroes',
             'getHeroModalState',
             'getTotalMembers',
             'getWbRating',
+            'getWbMembersRating',
             'getTotalExp',
         ]),
 
     },
     methods: {
-        ...mapActions(['toggleWbModal', 'toggleHeroModal']),
+        ...mapActions(['toggleWbModal', 'toggleHeroModal', 'addWbName']),
     },
 };
 </script>
